@@ -37,9 +37,15 @@ class Edital < ActiveRecord::Base
  	#has_attached_file :edital, :path => attachment_real_path, :url => attachment_virtual_path
 # 	has_attached_file :edital, :url => "/assets/editals/:id/:basename.:extension", :path => ":rails_root/public/assets/editals/:id/:style/:basename.:extension" 
 
+# 	has_attached_file :edital, 
+# 							:url => "/system/editals/:id/:basename.:extension", 
+# 							:path => ":rails_root/public/system/editals/:id/:basename.:extension" 
+
+
  	has_attached_file :edital, 
- 							:url => "/system/editals/:id/:basename.:extension", 
- 							:path => ":rails_root/public/system/editals/:id/:basename.:extension" 
+ 							:path => ":rails_root/non-public/system/editals/:id/:basename.:extension",
+ 							:url => "/:class/:id/:attachment" 
+
 
 	validates_numericality_of :numero_licitacao, :ano_licitacao , :modalidade_id
 

@@ -55,6 +55,7 @@ edit_edital_impugnation GET    /editals/:edital_id/impugnations/:id/edit(.:forma
        edital_micropost GET    /editals/:edital_id/microposts/:id(.:format)        {:action=>"show", :controller=>"microposts"}
                         PUT    /editals/:edital_id/microposts/:id(.:format)        {:action=>"update", :controller=>"microposts"}
                         DELETE /editals/:edital_id/microposts/:id(.:format)        {:action=>"destroy", :controller=>"microposts"}
+          edital_edital GET    /editals/:id/edital(.:format)                       {:action=>"edital", :controller=>"editals"}
                 editals GET    /editals(.:format)                                  {:action=>"index", :controller=>"editals"}
                         POST   /editals(.:format)                                  {:action=>"create", :controller=>"editals"}
              new_edital GET    /editals/new(.:format)                              {:action=>"new", :controller=>"editals"}
@@ -67,3 +68,4 @@ edit_edital_impugnation GET    /editals/:edital_id/impugnations/:id/edit(.:forma
                  logout        /logout(.:format)                                   {:action=>"destroy", :controller=>"sessions"}
                   login        /login(.:format)                                    {:action=>"new", :controller=>"sessions"}
                    root        /(.:format)                                         {:controller=>"editals", :action=>"index"}
+                               /:controller(/:action(/:id(.:format)))              

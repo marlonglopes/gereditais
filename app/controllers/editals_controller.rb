@@ -4,10 +4,16 @@ class EditalsController < ApplicationController
 
 	# filter at the top always
 	before_filter :login_required, :except => [:index, :show]
-	before_filter :check_admin, :except => [:index, :show]
+	before_filter :check_admin, :except => [:index, :show, :edital]
 
 	caches_page :index, :show
 	cache_sweeper :edital_sweeper, :only=>[:create, :update, :destroy]
+
+  def edital
+#	 send_file '/path/to/non-public/system/avatars/1/original/mickey-mouse.jpg', :type => 'image/jpeg'
+	edital = Edital.find(params[:id])
+  	send_file edital.edital.path, :type => edital.edital_content_type
+  end
 
   def index
 

@@ -1,7 +1,7 @@
 module EditalsHelper
 
 	def download_url(edital)
-		"#{ENV['RAILS_RELATIVE_URL_ROOT']}#{edital.edital.url}"
+		edital_edital_path(edital)
 	end
 
 	def link(content,edital)
