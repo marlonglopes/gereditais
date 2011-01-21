@@ -56,10 +56,8 @@
 <p>
    <% if logged_in? %>
 				<% if current_user.admin? %>			
-					<% if @edital.upload.empty? %>
 						<%= link_to "Editar", edit_edital_path(@edital) %> |
 						<%= link_to "Apagar", @edital, :confirm => 'Tem certeza que quer apagar?', :method => :delete %> |
-					<% end %>
 				<% end %>
    <% end %>
   <%= link_to "Exibir Todos os Editais", editals_path %>
