@@ -2,7 +2,13 @@
 
 class UploadsController < ApplicationController
 
-	before_filter :login_required
+  before_filter :login_required
+
+  def upload
+		edital = Edital.find(params[:edital_id])
+		upload  = edital.upload.find(params[:id])
+	  	send_file upload.arquivo.path, :type => upload.arquivo_content_type
+  end
 
   def index
 	 @edital=Edital.find_by_id(params[:edital_id])

@@ -12,7 +12,11 @@ Gereditais::Application.routes.draw do
 
 	resources :editals do
 		resources :downloads
-		resources :uploads
+		resources :uploads do
+			member do
+				get 'upload'
+			end
+		end
 		resources :impugnations
 		resources :microposts
 

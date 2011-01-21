@@ -34,6 +34,7 @@
         edital_download GET    /editals/:edital_id/downloads/:id(.:format)         {:action=>"show", :controller=>"downloads"}
                         PUT    /editals/:edital_id/downloads/:id(.:format)         {:action=>"update", :controller=>"downloads"}
                         DELETE /editals/:edital_id/downloads/:id(.:format)         {:action=>"destroy", :controller=>"downloads"}
+   upload_edital_upload GET    /editals/:edital_id/uploads/:id/upload(.:format)    {:action=>"upload", :controller=>"uploads"}
          edital_uploads GET    /editals/:edital_id/uploads(.:format)               {:action=>"index", :controller=>"uploads"}
                         POST   /editals/:edital_id/uploads(.:format)               {:action=>"create", :controller=>"uploads"}
       new_edital_upload GET    /editals/:edital_id/uploads/new(.:format)           {:action=>"new", :controller=>"uploads"}

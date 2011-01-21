@@ -7,7 +7,11 @@ class Upload < ActiveRecord::Base
 
 	attr_accessible :edital_id, :user_id, :arquivo
 
-	has_attached_file :arquivo
+#	has_attached_file :arquivo
+
+ 	has_attached_file :arquivo, 
+ 						:path => ":rails_root/non-public/system/uploads/:id/:basename.:extension",
+ 						:url => "/:class/:id/:attachment" 
 
 	validates_attachment_presence :arquivo
 
