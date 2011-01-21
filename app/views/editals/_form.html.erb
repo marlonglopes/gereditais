@@ -33,19 +33,20 @@
   <%= f.file_field :edital%>
  </p>
 
+
  <p>
  		<%= f.label :data_publicacao, "Data da Publicação" %><br />
-		<%= f.text_field :data_publicacao, :value=>@edital.data_publicacao , :class=>"data"%>
+		<%= f.text_field :data_publicacao, :value=>@edital.data_publicacao , :class=>"data", :disabled=>@edital.upload.any? %>
   </p>
 
   <p>
 		<%= f.label :data_abertura , "Data da Abertura" %><br />
-		<%= f.text_field :data_abertura, :value=> @edital.data_abertura ,:class=>"data" %>
+		<%= f.text_field :data_abertura, :value=> @edital.data_abertura , :class=>"data", :disabled=>@edital.upload.any?  %>
   </p>
 
   <p>
 		<%= f.label :hora_abertura , "Hora da Abertura" %><br />
-		<%= f.text_field :hora_abertura, :value=> @edital.hora_abertura ,:class=>"hora" %>
+		<%= f.text_field :hora_abertura, :value=> @edital.hora_abertura , :class=>"hora", :disabled=>@edital.upload.any?  %>
   </p>
 
 
