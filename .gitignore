@@ -2,6 +2,7 @@
 db/*.sqlite3
 log/*
 tmp/**/*
+non-public/system/**/*
 public/system/**/*
 public/cache/*
 public/cache/**/*
