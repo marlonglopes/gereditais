@@ -1,0 +1,10 @@
+<% if logged_in? %>
+
+<%	@user_downloads ||= current_user.group_by_editals.paginate(:page => params[:download_page], :per_page=>10) %>
+
+	<ul>
+		<%=render @user_downloads %>
+	</ul>
+
+	<%= will_paginate @user_downloads, :param_name => 'download_page' %>
+<% end %> 

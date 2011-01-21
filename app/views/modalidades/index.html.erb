@@ -1,0 +1,24 @@
+<% title "Modalidades" %>
+
+<table>
+  <tr>
+    <th>Codigo</th>
+    <th>Descricao</th>
+  </tr>
+  <% for modalidade in @modalidades %>
+    <tr>
+      <td><%= modalidade.codigo %></td>
+      <td><%= modalidade.descricao %></td>
+      <td><%= link_to "Exibir", modalidade %></td>
+
+		<% if logged_in? %>
+		   <td><%= link_to "Editar", edit_modalidade_path(modalidade) %></td>
+		   <td><%= link_to "Apagar", modalidade, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
+    </tr>
+  <% end %>
+</table>
+
+<% if logged_in? %>
+<p><%= link_to "Nova Modalidade", new_modalidade_path %></p>
+<% end %>

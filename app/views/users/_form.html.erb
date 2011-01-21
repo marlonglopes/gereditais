@@ -1,0 +1,130 @@
+<%= form_for @user do |f| %>
+
+<%= f.error_messages %>
+
+<table>
+
+<tr>
+<td >
+	<div class="dados_usuario round">
+	  <p>
+		 <%= f.label :username, "Usuario" %><br />
+		 <%= f.text_field :username, :class=>"user_username" %>
+		<span class="timestamp">Apenas letras, numeros, ou .-_@</span>
+	  </p>
+	  <p>
+		 <%= f.label :email, "Email" %><br />
+		 <%= f.text_field :email %>
+	  </p>
+	  <p>
+		 <%= f.label :password , "Senha"%><br />
+		 <%= f.password_field :password %>
+	  </p>
+	  <p>
+		 <%= f.label :password_confirmation, "Confirma Senha" %><br />
+		 <%= f.password_field :password_confirmation %>
+	  </p>
+	</div>
+</td>
+
+<td>
+</td>
+</tr>
+<tr>
+</tr>
+
+<tr>
+<td >
+	<div class="dados_empresa round">
+	  <p>
+		 <%= f.label :cnpj_cpf, "CNPJ ou CPF" %><br />
+		 <%= f.text_field :cnpj_cpf %>
+	  </p>
+
+	  <p>
+		 <%= f.label :inscr_estatual, "inscrição Estatual" %><br />
+		 <%= f.text_field :inscr_estatual %>
+	  </p>
+
+
+	  <p>
+		 <%= f.label :razao_social, "Razão Social ou Nome completo" %><br />
+		 <%= f.text_field :razao_social %>
+	  </p>
+
+	  <p>
+		 <%= f.label :fone, "Fone" %><br />
+		 <%= f.text_field :fone %>
+	  </p>
+
+	  <p>
+		 <%= f.label :fax, "Fax" %><br />
+		 <%= f.text_field :fax %>
+	  </p>
+
+	  <p>
+		 <%= f.label :contato, "Contato" %><br />
+		 <%= f.text_field :contato %>
+	  </p>
+	  <p>
+	  &nbsp
+	  </p>
+	  <p>
+	  &nbsp
+	  </p>
+
+	</div>
+</td>
+
+<td >
+
+	<div class="endereco_empresa round" id="endereco_empresa" data-root="<%=root_url%>" >
+	  <p>
+		 <%= f.label :cep, "CEP" %><br />
+		 <%= f.text_field :cep %>
+		<span id="wait_cep" style="display:none"> 
+			<%= image_tag "indicator_arrows_circle.gif" %> Localizando ...
+		</span> 
+	  </p>
+
+	  <p>
+		 <%= f.label :logradouro, "Logradouro" %><br />
+		 <%= f.text_field :logradouro, :readonly => true %>
+	  </p>
+
+	  <p>
+		 <%= f.label :numero, "Número" %><br />
+		 <%= f.text_field :numero %>
+	  </p>
+
+	  <p>
+		 <%= f.label :complemento, "Complemento" %><br />
+		 <%= f.text_field :complemento %>
+	  </p>
+
+	  <p>
+		 <%= f.label :bairro, "Bairro" %><br />
+		 <%= f.text_field :bairro, :readonly => true %>
+	  </p>
+
+	  <p>
+		 <%= f.label :cidade, "Cidade" %><br />
+		 <%= f.text_field :cidade, :readonly => true %>
+	  </p>
+
+	  <p>
+		 <%= f.label :uf, "UF" %><br />
+		 <%= f.text_field :uf , :readonly => true%>
+	  </p>
+
+	</div>
+
+
+</td>
+</tr>
+</table>
+
+
+<p><%= f.submit @user.new_record? ? "Salvar Cadastro" : "Atualizar Cadastro" %></p>
+
+<% end %>

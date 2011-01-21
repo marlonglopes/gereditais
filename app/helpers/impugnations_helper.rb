@@ -1,0 +1,2 @@
+module ImpugnationsHelper
+end

@@ -1,0 +1,8 @@
+
+$('#uploads').hide();
+$('#uploads').html("<%= escape_javascript( render 'uploads/form' )%>");
+ $('#uploads').fadeIn('slow', function() {
+    // Animation complete.
+  });
+
+

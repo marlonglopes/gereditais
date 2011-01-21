@@ -1,0 +1,17 @@
+<div id="editais">
+	<%= will_paginate @editals %>
+		<table class="microposts" summary="User microposts">
+
+			 <tr>
+				 <th><%= sort_link @search,  :descricao, "Descrição" %></th>
+				 <th><%= sort_link @search,  :publicado, "Publicado" %></th>
+				 <th><%= sort_link @search,  :data_publicacao, "Data Publicação" %></th>
+				 <th><%= sort_link @search,  :data_abertura, "Data Abertura" %></th>
+			  </tr>
+
+				<%= render @editals %>
+
+		</table>
+	<%= will_paginate @editals %>
+</div>
+

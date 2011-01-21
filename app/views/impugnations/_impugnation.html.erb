@@ -1,0 +1,24 @@
+
+<div class="impugnation">
+
+	<% path="#{ENV['RAILS_RELATIVE_URL_ROOT']}#{impugnation.arquivo.url}" %>
+
+	<%= "#{impugnation.user.razao_social}" if current_user.admin?%>
+
+	<div class="edit_icon">
+	<%= link_to image_tag("icons/pencil.png",:alt=>"Alterar impugnação"),  edit_edital_impugnation_path(@edital,impugnation), :remote=>true unless current_user.admin?%>
+	</div>
+
+
+	<span class="timestamp">
+		<%= link_to impugnation.arquivo_file_name,path %> postado a <%= time_ago_in_words(impugnation.updated_at) %>
+	</span>
+
+	<div class="clear"></div>
+
+</div>
+
+
+
+
+

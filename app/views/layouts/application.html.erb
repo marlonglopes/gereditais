@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+		<%= render 'layouts/stylesheets' %>
+
+		<%= csrf_meta_tag %>
+
+		<%= yield(:head) %>
+
+  </head>
+  <body>
+
+    <div class="container">
+
+		<%=render 'layouts/header' %>
+
+		<section class="round">
+
+		   <% flash.each do |name, msg| %>
+		     <%= content_tag :div, msg, :id => "flash_#{name}" %>
+		   <% end %>
+
+		   <%= content_tag :h1, yield(:title) if show_title? %>
+	      <%= yield %>
+		</section>
+
+		<%=render 'layouts/footer' %>
+
+    </div>
+
+		<%= javascript_include_tag :all %>
+
+  </body>
+</html>

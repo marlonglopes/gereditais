@@ -1,0 +1,33 @@
+<% if flash[:impugnation_error]%>
+	<%= content_tag :div, flash[:impugnation_error], :id => "flash_error" %>
+<% end%>
+
+<% if logged_in? %>
+
+	<% if current_user.admin? %>			
+
+			<% @count_imp = @edital.impugnation.size%>
+			<%= @count_imp < 2 ? "#{@count_imp} Impugnação" : "#{@count_imp} Impugnações"%>
+
+			<div>
+				<%= render :partial => @edital.impugnation %>
+			</div>
+
+	<% else %>			
+
+			<% @count_imp=@edital.impugnation.where(:user_id=>current_user).size%>
+			<%= @count_imp < 2 ? "#{@count_imp} Impugnação" : "#{@count_imp} Impugnações"%>
+
+			<div>
+				<%= render :partial => @edital.impugnation.where(:user_id=>current_user) %>
+			</div>
+
+			<div id="impugnation_form" class="round">
+				<%= link_to image_tag("icons/add.png",:alt=>"Nova Impugnação"), new_edital_impugnation_path(@edital), :remote=>true unless current_user.admin?%>Nova Impugnação
+			</div>
+
+	<% end %>			
+
+	
+<% end %>
+

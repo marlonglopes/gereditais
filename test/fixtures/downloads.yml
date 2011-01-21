@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  edital_id: 1
+  fornecedor_id: 1
+
+two:
+  edital_id: 1
+  fornecedor_id: 1

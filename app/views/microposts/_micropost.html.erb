@@ -1,0 +1,14 @@
+<tr>
+	<td class="gravatar">
+		<%= micropost.user.username %>
+	</td>
+
+	<td class="micropost">
+		<span class="content"><%= wrap(micropost.post) %></span>
+		<span class="timestamp">
+		Postado a  <%= time_ago_in_words(micropost.created_at) %>
+		</span>
+	</td>
+</tr>
+
+

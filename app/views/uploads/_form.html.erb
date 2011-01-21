@@ -1,0 +1,46 @@
+<% if @count_uploads!=0 %>
+	<div class="close_uploads">
+	    <%= image_tag "icons/cancel.png", :alt=>"Cancelar" %>
+	</div>
+
+	<script>
+
+	$('.close_uploads').click(function() {
+		$('#uploads').hide();
+		$('#uploads').html("<%= escape_javascript( render 'uploads' )%>");
+		 $('#uploads').fadeIn('slow', function() {
+			 // Animation complete.
+		  });
+	});
+
+	</script>
+<% end %>
+
+<% agora = Time.now %>
+<% abertura = @edital.abertura %>
+
+<% if agora < abertura %>
+
+	<%= form_for [@edital, @upload], :html => { :multipart => true }  do |f| %>
+
+  		<%= f.error_messages %>
+
+		<%= f.hidden_field :edital_id, "value" => @edital.id %>
+		<%= f.hidden_field :user_id, "value" => current_user.id %>
+
+		<p>
+			<%= f.label :edital, "Selecione nova proposta" %><br />
+			<%= f.file_field :arquivo  %>
+		</p>
+
+		<p><%= f.submit "Enviar proposta"  %></p>
+	<% end %>
+
+<% else %>
+	<div class="aviso_upload">
+		Não é possível submeter propostas, prazo até: <%= "#{@edital.data_abertura}, #{@edital.hora_abertura} " %>
+	</div>
+<% end %>
+
+
+

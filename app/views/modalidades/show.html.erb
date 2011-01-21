@@ -1,0 +1,21 @@
+<% title "Modalidade" %>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @modalidade.codigo %>
+</p>
+<p>
+  <strong>Descricao:</strong>
+  <%= @modalidade.descricao %>
+</p>
+
+<p>
+	<% if logged_in? %>
+		<%= link_to "Editar", edit_modalidade_path(@modalidade) %> |
+		<%= link_to "Apagar", @modalidade, :confirm => 'Are you sure?', :method => :delete %> |
+		<%= link_to "Nova Modalidade", new_modalidade_path %>
+	<% else %>
+		<%= link_to "Exibir Todas", modalidades_path %>
+	<% end%>
+
+</p>

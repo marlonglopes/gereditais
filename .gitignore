@@ -1,0 +1,8 @@
+.bundle
+db/*.sqlite3
+log/*
+tmp/**/*
+public/system/**/*
+public/cache/*
+public/cache/**/*
+

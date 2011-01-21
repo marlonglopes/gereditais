@@ -1,0 +1,49 @@
+		<tr>
+
+		<td>
+
+			<div id="edital_titulo">
+
+				<% if logged_in? %>
+						<div id="link" data-url="<%=edital.edital.url%>" data-user="<%=current_user.id%>" data-id="<%= edital.id %>">
+							<%= link "#{edital.modalidade.descricao} #{edital.numero_licitacao}/#{edital.ano_licitacao}", edital %>
+						</div>
+			<% else %>
+
+						<div id="link">
+								<%= link "#{edital.modalidade.descricao} #{edital.numero_licitacao}/#{edital.ano_licitacao}", edital %>
+						</div>
+
+			<% end %>
+
+			</div>
+
+			<p>
+
+				<div class="lista_edital_descricao">
+				  <%= wrap(edital.descricao) %><br />
+				</div>		
+
+				<br />
+
+				<div class="lista_edital_aviso">
+				  <%= wrap(edital.aviso) %><br />
+				</div>
+
+				<br />		
+
+				<% if logged_in? and current_user.admin? %>			
+					<% if edital.upload.empty? %>
+						<%= link_to "Editar", edit_edital_path(edital) %> |
+						<%= link_to "Apagar", edital, :confirm => 'Tem Certeza?', :method => :delete %> |
+					<% end %>
+				<% end %>
+				<%= link_to "Exibir", edital %>
+			</p>
+		</td>
+		<td><%= (edital.publicado) ? "Sim" : "Não" %></td>
+		<td><%= edital.data_publicacao %></td>
+		<td><%= edital.data_abertura %></td>
+		</tr>
+
+

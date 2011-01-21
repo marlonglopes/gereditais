@@ -1,0 +1,15 @@
+	<%= pluralize(@edital.download.count, 'Download') %>
+	
+	<% downloads ||= @edital.download.group(:user_id).select("user_id, count(user_id) as count_download").paginate(:page => params[:download_edital], :per_page=>10)%>
+	
+	<ul>
+
+	<% for download in downloads %>
+		<li>
+			<%= "#{download.user.razao_social}, #{download.user.username}" %> <%= pluralize(download.count_download, "Download") %>
+		</li>
+	<% end%>
+
+	</ul>
+
+	<%= will_paginate downloads, :param_name => 'download_edital' %>

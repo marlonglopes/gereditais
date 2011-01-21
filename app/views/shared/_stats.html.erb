@@ -1,0 +1,28 @@
+<% if logged_in? %>
+		<p>
+			<strong>Empresa:</strong> <%= current_user.razao_social %>	
+		</p>
+		<p>
+			<strong>Usuário:</strong> <%= current_user.username %>
+		</p>
+		<p>
+			<strong>Email:</strong> <%= current_user.email %>
+		</p>
+
+		<% if current_user.admin? %>			
+			<% if @edital%>
+				<hr />
+				<div id="edital<%= @edital.id %>"> 
+					<%= render 'downloads/count', :id=>@edital.id %>
+				</div>
+			<% end %>
+		<% else %>			
+				<div>
+					<%= pluralize(current_user.edital.count, "Download") %>
+				</div>
+				<div id="user_downloads">
+					<%=render 'downloads/downloads'%>
+				</div>
+		<% end %>			
+		
+<% end %>

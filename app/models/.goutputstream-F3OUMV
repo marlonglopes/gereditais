@@ -1,0 +1,40 @@
+class Edital < ActiveRecord::Base
+
+	attr_accessible :numero_licitacao, :ano_licitacao, :modalidade_id, :titulo, :descricao,
+	 :aviso, :data_publicacao, :data_abertura, :publicado, :bionexo,:edital
+
+	validates_presence_of :numero_licitacao, :ano_licitacao, :modalidade_id, 
+								:titulo, :descricao, :data_publicacao, :data_abertura, :edital
+
+# 	has_attached_file :edital
+#	validates_numericality_of :numero_licitacao, :ano_licitacao , :modalidade_id
+#	validates_attachment_presence :edital
+#	validates_attachment_content_type :edital, :content_type => ['application/pdf','application/zip'],
+#												:message => 'Somente pdf. e zip.'
+#	validates_attachment_size :edital, :less_than =>100.megabytes                                    
+
+
+#####################################################################################
+
+	belongs_to :modalidade
+
+	has_many :upload , :dependent => :destroy
+	
+	has_many :download , :dependent => :destroy
+
+	has_many :user , :through=> :download
+
+	scope :publicado, where(:publicado => true)
+
+	scope :naopublicado, where(:publicado => false)
+
+
+	def publicacao
+		data_publicacao.strftime('%d/%m/%Y')
+	end
+
+	def abertura
+		data_abertura.strftime('%d/%m/%Y')
+	end
+
+end

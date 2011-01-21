@@ -1,0 +1,67 @@
+<p>
+	<h2><%= link "#{@edital.modalidade.descricao} #{@edital.numero_licitacao}/#{@edital.ano_licitacao}", @edital %></h2>
+</p>
+<p>
+  <strong>Numero Licitacao:</strong>
+  <%= @edital.numero_licitacao %>
+</p>
+<p>
+  <strong>Ano Licitacao:</strong>
+  <%= @edital.ano_licitacao %>
+</p>
+<p>
+  <strong>Modalidade:</strong>
+  <%= @edital.modalidade.descricao %>
+</p>
+<p>
+  <strong>Titulo:</strong>
+		<div id="edital_titulo">
+		   <%= wrap(@edital.titulo) %>
+		</div>
+ </p>
+
+<p>
+  <strong>Descricao:</strong>
+		<div id="edital_descricao">
+		  <%= wrap(@edital.descricao) %>
+		</div>
+</p>
+
+<br />
+
+	<p>
+		<strong>Aviso:</strong>
+		<div id="edital_aviso">
+			<%= wrap(@edital.aviso) %>
+		</div>
+	</p>
+
+<br />
+
+<p>
+  <strong>Data Publicacao:</strong>
+  <%= @edital.data_publicacao %>
+</p>
+
+<p>
+  <strong>Data Abertura:</strong>
+  <%= @edital.data_abertura %>, as  <%= @edital.hora_abertura %>
+</p>
+
+<p>
+  <strong>Publicado:</strong>
+  <%= (@edital.publicado) ? "Sim" : "Não" %>
+</p>
+
+<p>
+   <% if logged_in? %>
+				<% if current_user.admin? %>			
+					<% if @edital.upload.empty? %>
+						<%= link_to "Editar", edit_edital_path(@edital) %> |
+						<%= link_to "Apagar", @edital, :confirm => 'Tem certeza que quer apagar?', :method => :delete %> |
+					<% end %>
+				<% end %>
+   <% end %>
+  <%= link_to "Exibir Todos os Editais", editals_path %>
+</p>
+

@@ -1,0 +1,38 @@
+<% if flash[:upload_error]%>
+	<%= content_tag :div, flash[:upload_error], :id => "flash_error" %>
+<% end%>
+
+
+<% if logged_in? %>
+
+	<% if current_user.admin? %>			
+
+			<%= pluralize(@edital.upload.size, "Proposta")%>
+
+			<div>
+				<%= render :partial => @edital.upload %>
+			</div>
+
+	<% else %>			
+
+			<% @count_uploads=@edital.upload.where(:user_id=>current_user).size%>
+			<%= pluralize(@count_uploads, "Proposta")%>
+
+			<div>
+				<%= render :partial => @edital.upload.where(:user_id=>current_user) %>
+			</div>
+
+			<% if @count_uploads==0 %>
+
+			<div id="upload_form" class="round">
+				<%= link_to image_tag("icons/add.png",:alt=>"Nova Proposta"), new_edital_upload_path(@edital), :remote=>true unless current_user.admin?%>Nova Proposta
+			</div>
+
+
+			<% end %>
+
+	<% end %>			
+
+	
+<% end %>
+

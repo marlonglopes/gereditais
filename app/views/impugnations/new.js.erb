@@ -1,0 +1,7 @@
+$('#impugnation_form').hide();
+$('#impugnation_form').html("<%= escape_javascript( render 'impugnations/form' )%>");
+ $('#impugnation_form').fadeIn('slow', function() {
+    // Animation complete.
+  });
+
+

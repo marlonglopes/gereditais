@@ -1,0 +1,15 @@
+<tr>
+
+
+	<td class="micropost">
+		<%= link_to "#{user.username} - #{user.razao_social}", user %>
+		<% if current_user.admin? %>
+
+<!--		( <%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
+																:title => "Delete #{user.username}" %> )-->
+		<% end %>
+
+	</td>
+
+</tr>
+

@@ -1,0 +1,648 @@
+div.clear {
+  border-top:1px solid #ccc;
+  width:100%;
+  clear: right;
+  }
+
+#mensagem_micropost{
+	display: block;
+	font-size: 90%;
+	color: #FF0000;
+	font-style:italic;
+}
+.impugnation {
+	margin-bottom: 0.3em;
+	vertical-align: top;
+	margin-top: 1em;
+/*	border-top: 1px solid #ccc;*/
+	vertical-align: top;
+	width: 100%;
+/*	border-top: 1px solid #ccc;*/
+/*	vertical-align: top;*/
+	padding-top: 1px;
+	display: block;
+	font-size: 100%;
+	color: #666;
+}
+
+.upload {
+	margin-bottom: 0.3em;
+	vertical-align: top;
+	margin-top: 1em;
+/*	border-top: 1px solid #ccc;*/
+	vertical-align: top;
+	width: 100%;
+/*	border-top: 1px solid #ccc;*/
+/*	vertical-align: top;*/
+	padding-top: 1px;
+	display: block;
+	font-size: 100%;
+	color: #666;
+}
+
+.aviso_upload {
+	text-align: center;
+/*	width: 144px;*/
+/*	height: 31px;*/
+/*	padding: 10px 10px 0 0;*/
+	margin: 0 auto;
+	display: block;
+	font: bold 100% Arial, Helvetica, sans-serif;
+	color: red;
+	text-decoration: none;
+}
+
+.aviso_impugnacao {
+	text-align: center;
+/*	width: 144px;*/
+/*	height: 31px;*/
+/*	padding: 10px 10px 0 0;*/
+	margin: 0 auto;
+	display: block;
+	font: bold 100% Arial, Helvetica, sans-serif;
+	color: red;
+	text-decoration: none;
+}
+
+#hoje_footer {
+	float: right;
+}
+
+#wait_cep {
+/*	float: top right;*/
+	display: block;
+	font-size: 85%;
+	color: #666;
+}
+
+
+.close_uploads {
+/*	background: url(/images/cancel.png) no-repeat center top;*/
+	float: right;
+ 	cursor: pointer;
+}
+
+.close_impugnations {
+/*	background: url(/images/cancel.png) no-repeat center top;*/
+	float: right;
+ 	cursor: pointer;
+}
+
+.edit_icon {
+/*	background: url(/images/cancel.png) no-repeat center top;*/
+	float: right;
+}
+
+
+a:focus {
+	outline: none;
+}
+
+#panel {
+/*	background: #754c24;*/
+/*	height: 3000px;*/
+	display: none;
+}
+
+.slide {
+/*	margin: 0;*/
+/*	padding: 0;*/
+	border-top: solid 1px  #cdd;
+/*	border-style:solid;*/
+/*	border-top:thick double #ff0000;*/
+	background: url(/gereditais/images/btn-slide.gif) no-repeat center top;
+/*  background: #9c3;*/
+
+}
+
+
+.btn-slide {
+
+	background: url(/gereditais/images/white-arrow.gif) no-repeat right -50px;
+	text-align: center;
+	width: 144px;
+	height: 31px;
+	padding: 10px 10px 0 0;
+	margin: 0 auto;
+	display: block;
+	font: bold 120%/100% Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
+
+}
+
+.active {
+	background-position: right 12px;
+}
+
+
+##################################
+
+/*#search {display:none;}*/
+
+
+.edital_descricao{
+	width:100%;
+	height:200px;
+}
+
+
+textarea#edital_descricao{
+	width:100%;
+	height:200px;
+}
+
+textarea#edital_aviso{
+	width:100%;
+	height:200px;
+}
+
+#edital_aviso{
+	color:#red;
+}
+
+.lista_edital_aviso{
+	color:#red;
+}
+
+
+#edital_titulo{
+	font-weight: bold;
+}
+
+input[type=text], input[type=password], input.text, input.title {
+	background-color:#fff;
+	border:1px solid #bbb;
+	width:380px;
+}
+
+input[type=text].data {
+	background-color:#fff;
+	border:1px solid #bbb;
+	width:150px;
+}
+
+input[type=text].hora {
+	background-color:#fff;
+	border:1px solid #bbb;
+	width:150px;
+}
+
+
+#edital_modalidade_id {
+	background-color:#fff;
+	border:1px solid #bbb;
+	width:380px;
+}
+
+ul.users {
+	margin-top: 1em;
+}
+
+.users li {
+	list-style: none;
+}
+
+
+.container {
+	height: 90%;
+	width: 90%;
+}
+
+#container {
+/*  width: 75%;*/
+/*  margin: 0 auto;*/
+/*  background-color: #FFF;*/
+/*  padding: 20px 40px;*/
+/*  border: solid 1px black;*/
+/*/*  margin-top: 20px;*/*/
+}
+
+
+body {
+	background: #cdd;
+}
+
+header {
+	padding-top: 20px;
+}
+
+header img {
+	padding: 1em;
+	background: #fff;
+}
+
+section {
+	margin-top: 1em;
+	font-size: 100%;
+	padding: 20px;
+	background: #fff;
+}
+
+section h1 {
+	font-size: 200%;
+}
+
+/* Links */
+
+a {
+	color: #09c;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #069;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #069;
+}
+
+/* Navigation */
+
+nav {
+	float: right;
+}
+
+nav {
+	background-color: white;
+	padding: 0 0.7em;
+	white-space: nowrap;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	list-style-type: none;
+	display: inline-block;
+	padding: 0.2em 0;
+}
+
+nav ul li a {
+	padding: 0 5px;
+	font-weight: bold;
+}
+
+nav ul li a:visited {
+	color: #09c;
+}
+
+nav ul li a:hover {
+	text-decoration: underline;
+}
+
+/* Sign up button */
+
+a.signup_button {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	width: 190px;
+	color: #fff;
+	background: #006400;
+	font-size: 150%;
+	font-weight: bold;
+	padding: 20px;
+}
+
+.signup_button {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	width: 190px;
+	color: #fff;
+	background: #006400;
+	font-size: 150%;
+	font-weight: bold;
+	padding: 20px;
+}
+
+
+
+a.novo_edital_button {
+/*	float: right;*/
+
+	background: url(/images/btn-slide.gif) no-repeat center top;
+
+	display: block;
+	text-align: center;
+	width: 100px;
+	color: #ffc;
+	background:  #006400;
+	font-weight: bold;
+	font-size: 100%;
+	padding: 10px;
+}
+
+
+a.search_editais_button {
+	display: block;
+	text-align: center;
+	width: 100px;
+	color: #ffc;
+	background:  #006400;
+	font-weight: bold;
+	font-size: 100%;
+	padding: 10px;
+}
+
+.count_button {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	text-align: center;
+	width: 190px;
+	color: #fff;
+	background: #006400;
+	font-size: 150%;
+	font-weight: bold;
+	padding: 20px;
+}
+
+/* Round corners */
+
+.round {
+	-moz-border-radius:	10px;
+	-webkit-border-radius:	10px;
+	border-radius:		10px;
+}
+
+footer {
+	text-align: center;
+	margin-top: 10px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer nav {
+	float: none;
+}
+
+
+/* User singup page*/
+
+.dados_usuario {
+	float: center;
+	padding: 20px;
+	width: 70%
+	vertical-align: top;
+	background: #ffd;
+}
+.dados_empresa {
+	float: center;
+	padding: 20px;
+	width: 70%
+	vertical-align: top;
+	background: #ffd;
+}
+.endereco_empresa {
+	float: center;
+	padding: 20px;
+	width: 70%
+	vertical-align: top;
+	background: #ffd;
+}
+
+.login_usuario {
+	float: center;
+	padding: 20px;
+	width: 70%
+	vertical-align: top;
+	background: #ffd;
+}
+
+
+/* User show page */
+
+table.profile {
+	width: 100%;
+	margin-bottom: 0;
+}
+td.main {
+	width: 70%;
+	padding: 1em;
+}
+
+.sidebar {
+	width: 70%
+	marging: 1em;
+	padding: 1em;
+	vertical-align: top;
+	background: #ffc;
+}
+
+#uploads {
+	width: 70%
+	marging: 1em;
+	padding: 1em;
+	vertical-align: top;
+	background: #ffe;
+}
+
+#impugnations {
+	width: 70%
+	marging: 1em;
+	padding: 1em;
+	vertical-align: top;
+	background: #ffe;
+}
+
+#impugnation_form {
+	width: 70%
+	marging: 1em;
+	padding: 1em;
+	vertical-align: top;
+	background: #ffe;
+}
+
+#upload_form {
+	width: 70%
+	marging: 1em;
+	padding: 1em;
+	vertical-align: top;
+	background: #ffe;
+}
+
+
+#stats {
+	width: 70%
+	marging: 1em;
+	padding: 1em;
+	vertical-align: top;
+	background: #ffa;
+}
+
+
+td.sidebar {
+	width: 100%;
+	padding: 1em;
+	vertical-align: top;
+	background: #ffc;
+}
+.profile img.gravatar {
+	border: 1px solid #999;
+	margin-bottom: -15px;
+}
+
+div.field, div.actions {
+	margin-bottom: 10px;
+}
+
+.field_with_errors {
+	margin-top: 10px;
+	padding: 2px;
+	background-color: red;
+	display: table;
+}
+
+.field_with_errors label {
+	color: #fff;
+}
+
+#error_explanation {
+	width: 400px;
+	border: 2px solid red;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+	background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	font-size: 12px;
+	margin: -7px;
+	background-color: #c00;
+	color: #fff;
+}
+
+#error_explanation p {
+	color: #333;
+	margin-bottom: 0;
+	padding: 5px;
+}
+
+#error_explanation ul li {
+	font-size: 12px;
+	list-style: square;
+}
+
+/*microposts*/
+
+h1.micropost {
+	margin-bottom: 0.3em;
+}
+
+table.microposts {
+	vertical-align: top;
+	margin-top: 1em;
+}
+
+table.microposts tr {
+	height: 70px;
+}
+
+table.microposts tr td.gravatar {
+	border-top: 1px solid #ccc;
+	vertical-align: top;
+	width: 50px;
+}
+
+table.microposts tr td.micropost {
+	border-top: 1px solid #ccc;
+	vertical-align: top;
+	padding-top: 10px;
+}
+
+
+table.microposts tr td.micropost span.timestamp {
+	display: block;
+	font-size: 85%;
+	color: #666;
+}
+
+
+/*usuarios*/
+
+h1.usuario {
+	margin-bottom: 0.3em;
+}
+
+table.usuarios {
+	vertical-align: top;
+	margin-top: 1em;
+}
+
+table.usuarios tr {
+	height: 40px;
+}
+
+table.usuarios tr td.gravatar {
+	border-top: 1px solid #ccc;
+	vertical-align: top;
+	width: 50px;
+}
+
+table.usuarios tr td.micropost {
+	border-top: 1px solid #ccc;
+	vertical-align: top;
+	padding-top: 10px;
+}
+
+
+table.usuarios tr td.micropost span.timestamp {
+	display: block;
+	font-size: 85%;
+	color: #666;
+}
+
+span.timestamp {
+	display: block;
+	font-size: 85%;
+	color: #666;
+}
+
+
+div.user_info img {
+	padding-right: 0.1em;
+}
+
+div.user_info a {
+	text-decoration: none;
+}
+
+div.user_info span.user_name {
+	position: absolute;
+}
+
+div.user_info span.microposts {
+	font-size: 80%;
+}
+
+form.new_micropost {
+	margin-bottom: 2em;
+}
+
+form.new_micropost textarea {
+	height: 4em;
+	margin-bottom: 0;
+}
+
+
+div.uploads {
+	width: 100%;
+	padding: 1em;
+	vertical-align: top;
+	background: #ffc;
+}
+
+

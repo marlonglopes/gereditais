@@ -1,0 +1,25 @@
+<% title "Download" %>
+
+<% @user ||= current_user %>
+
+	<table class="front" summary="For signed-in users">
+
+		<tr>
+
+			<td class="main">
+				<div id="microposts">
+						<%= render 'form' %>				
+				</div>
+			</td>
+	
+			<% if logged_in? %>
+				<td class="sidebar">
+					<div id="stats" class="round">					
+						<%= render 'shared/stats' %>	
+					<div>
+				</td>
+			<% end %>
+
+		</tr>
+
+	</table>

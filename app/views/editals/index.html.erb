@@ -1,0 +1,38 @@
+<% title "Editais" %>
+
+	<% if logged_in? %>
+			<% if current_user.admin? %>			
+				<div>
+					<p><%= link_to "Novo Edital", new_edital_path , :class => "novo_edital_button round" %></p>
+				</div>
+			<% end %>			
+	<% end %>
+
+	<div id="panel"> 
+			<%= render 'search'%>
+	</div> 
+	
+	<div class="slide">
+		<a href="#" class="btn-slide round " >Pesquisar</a>
+	</div> 
+
+	<table class="front" summary="Lista de Editais">
+		<tr>
+			<td class="main">
+				<%= render 'editais' %>				
+			</td>
+			<% if logged_in? %>
+				<td class="sidebar round">
+					<div id="stats" class="sidebar round">					
+						<%= render 'shared/stats' %>
+					</div>
+				</td>
+			<% end %>
+		</tr>
+	</table>
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+
+<br />
+<%= form_for [@edital , @micropost], :remote=>true do |f| %>
+
+	<%= f.hidden_field :edital_id, "value" => @edital.id %>
+	<%= f.hidden_field :user_id, "value" => current_user.id %>
+
+  <div class="field">
+    <%= f.label :post, "Novo Comentário:" %><br />
+
+<div id="mensagem_micropost">
+	( Não serão aceitos impugnçãoes ou esclarecimentos postados no espaço abaixo, somente será eceito através de upload de arquivos ao lado.)
+</div>
+
+
+    <%= f.text_area :post %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Salvar Comentário" %>
+  </div>
+<% end %>
+
+
+

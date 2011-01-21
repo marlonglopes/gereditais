@@ -1,0 +1,44 @@
+
+<div id="edital_titulo">
+	<p>
+		<%= wrap("#{@edital.modalidade.descricao} #{@edital.numero_licitacao}/#{@edital.ano_licitacao}") %>
+	</p>
+
+	<p>
+		<%= wrap(@edital.descricao) %>
+	</p>
+</div>
+
+<div id="link">
+		<%= form_for [@edital, @download], :remote=>true  do |f| %>
+
+			<%= f.error_messages %>
+
+			<%= f.hidden_field :edital_id, "value" => @edital.id %>
+			<%= f.hidden_field :user_id, "value" => current_user.id %>
+
+			<%= f.submit "Download !", :class => "signup_button round" %>
+		<% end %>
+</div>
+
+
+
+	<% if current_user.admin?%>
+		<hr />
+		<div id="edital<%= @edital.id %>" class="sidebar round"> 
+			<%= render 'count', :id=>@edital.id%>
+		</div>
+	<% end %>	
+
+	<% if current_user.admin? %>
+		<%=  link_to  "Propostas", @edital %>
+	<% else %>
+		<%=  link_to  "Upload de Proposta", @edital %>
+	<% end %>
+	
+<div>
+
+
+
+
+

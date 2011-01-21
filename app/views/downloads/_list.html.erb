@@ -1,0 +1,33 @@
+
+<div id="edital_titulo">
+	<p>
+		<%= wrap("#{@edital.modalidade.descricao} #{@edital.numero_licitacao}/#{@edital.ano_licitacao}") %>
+	</p>
+
+	<p>
+		<%= wrap(@edital.descricao) %>
+	</p>
+</div>
+
+<p>
+<div id="link">
+	<%= link_to "Download!" , edital_downloads_path(@edital), :method=>:post, :class => "signup_button round" %>
+</p>
+
+
+	<% if current_user.admin?%>
+		<hr />
+		<div id="edital<%= @edital.id %>" class="sidebar round"> 
+			<%= render 'count', :id=>@edital.id%>
+		</div>
+	<% end %>	
+
+	<% if current_user.admin? %>
+		<%=  link_to  "Propostas", @edital %>
+	<% else %>
+		<%=  link_to  "Upload de Proposta", @edital %>
+	<% end %>
+	
+<div>
+
+

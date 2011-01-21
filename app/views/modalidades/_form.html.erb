@@ -1,0 +1,12 @@
+<%= form_for @modalidade do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :codigo %><br />
+    <%= f.text_field :codigo %>
+  </p>
+  <p>
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %>
+  </p>
+  <p><%= f.submit "Salvar" %></p>
+<% end %>

@@ -1,0 +1,35 @@
+<% if logged_in? %>
+
+<div class="uploads round">
+
+	<% if current_user.admin? %>			
+
+			<%= pluralize(@edital.upload.size, "Proposta")%>
+
+			<div>
+				<%= render :partial => @edital.upload %>
+			</div>
+
+	<% else %>			
+
+			<% count_uploads=current_user.upload.where(:edital_id=>@edital).size %>
+			<%= pluralize(count_uploads, "Proposta")%>
+
+			<div>
+				<%= render :partial => current_user.upload.where(:edital_id=>@edital) %>
+			</div>
+
+			<% if count_uploads!=0 %>
+				<div>
+					<p>	
+						<%=render 'form' %>
+					</p>
+				</div>
+			<% end %>
+
+	<% end %>			
+
+</div>
+	
+<% end %>
+

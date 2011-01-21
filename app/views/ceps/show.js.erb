@@ -1,0 +1,17 @@
+<% if @cep %>
+
+	$('#user_logradouro').val("<%= @cep.logradouro%>");
+	$('#user_bairro').val("<%= @cep.bairro%>");
+	$('#user_cidade').val("<%= @cep.localidade%>");
+	$('#user_uf').val("<%= @cep.uf%>");
+	$('#wait_cep').hide();
+	
+<% else %>
+
+	$('#user_logradouro').val("");
+	$('#user_bairro').val("");
+	$('#user_cidade').val("");
+	$('#user_uf').val("");
+	$('#wait_cep').hide();
+
+<% end %>

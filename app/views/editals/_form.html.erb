@@ -1,0 +1,60 @@
+<%= form_for @edital, :html => { :multipart => true }  do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :numero_licitacao %><br />
+    <%= f.text_field :numero_licitacao %>
+  </p>
+  <p>
+    <%= f.label :ano_licitacao %><br />
+    <%= f.text_field :ano_licitacao %>
+  </p>
+  <p>
+    <%= f.label :modalidade_id %><br />
+	<%= f.select  "modalidade_id",  @modalidades.map { |m| [ m.descricao, m.codigo ]}, {:include_blank => ''}%>
+    
+  </p>
+  <p>
+    <%= f.label :titulo %><br />
+    <%= f.text_field :titulo %>
+  </p>
+
+  <p>
+    <%= f.label :descricao %><br />
+    <%= f.text_area :descricao %>
+  </p>
+
+  <p>
+    <%= f.label :aviso %><br />
+    <%= f.text_area :aviso%>
+  </p>
+
+ <p>
+  <%= f.label :edital, "Selecione o arquivo para Upload" %><br /><br />
+  <%= f.file_field :edital%>
+ </p>
+
+ <p>
+ 		<%= f.label :data_publicacao, "Data da Publicação" %><br />
+		<%= f.text_field :data_publicacao, :value=>@edital.data_publicacao , :class=>"data"%>
+  </p>
+
+  <p>
+		<%= f.label :data_abertura , "Data da Abertura" %><br />
+		<%= f.text_field :data_abertura, :value=> @edital.data_abertura ,:class=>"data" %>
+  </p>
+
+  <p>
+		<%= f.label :hora_abertura , "Hora da Abertura" %><br />
+		<%= f.text_field :hora_abertura, :value=> @edital.hora_abertura ,:class=>"hora" %>
+  </p>
+
+
+  <p>
+    <%= f.label :publicado %><br />
+    <%= f.check_box :publicado %>
+  </p>
+
+  <p><%= f.submit "Salvar"%></p>
+<% end %>
+
+

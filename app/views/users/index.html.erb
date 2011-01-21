@@ -1,0 +1,13 @@
+<% title "Lista de Usuários" %>
+
+<% if logged_in? and current_user.admin? %>
+
+	<%= will_paginate @users %>
+	<table class="usuarios" summary="Users">
+		<%= render @users %>
+	</table>
+	<%= will_paginate @users %>
+
+<% end %>
+
+

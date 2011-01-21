@@ -1,0 +1,65 @@
+<% title "Dados do Usuário" %>
+<% if @user %>
+
+	<table class="profile" summary="Profile information">
+	<tr>
+		<td class="main">
+
+			<h3>
+				<strong>Empresa: </strong> <%= @user.razao_social %>
+			</h3>
+
+			<h3>
+				<strong>CNPJ / CPF: </strong><%= @user.cnpj_cpf %>
+			</h3>
+
+
+			<h3>
+				<strong>usuário: </strong><%= @user.username %>
+			</h3>
+
+			<h3>
+				<strong>email: </strong>	<%= @user.email %>
+			</h3>
+
+			<h3>
+				<strong>fone: </strong>	<%= @user.fone %>
+			</h3>
+
+			<h3>
+				<strong>fax: </strong>	<%= @user.fax %>
+			</h3>
+
+			<h3>
+				<strong>Contato: </strong>	<%= @user.contato %>
+			</h3>
+
+			<h3>
+				<strong>Pass: </strong>	
+
+				<%  
+					begin	
+						ret =ControllerConsomewsghc::wsghc(:id=>12,:param=>@user.cnpj_cpf.gsub(/\./,"").gsub(/\//,"").gsub(/\-/,"")) 
+					rescue
+					end
+				%>
+				<%=
+					begin 
+						ret.split("^")[2] 
+					rescue 
+					end
+				%>
+			</h3>
+
+
+		</td>
+
+		<td class="sidebar round">
+			<%= render 'user_stats' %>
+		</td>
+
+	</tr>
+
+	</table>
+
+<% end %>

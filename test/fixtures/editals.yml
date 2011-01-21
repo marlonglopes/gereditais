@@ -1,0 +1,23 @@
+one:
+  numero_licitacao: 1
+  ano_licitacao: 1
+  id_modalidade: 1
+  titulo: MyString
+  descricao: MyText
+  aviso: MyText
+  data_publicacao: 2010-11-23
+  data_abertura: 2010-11-23
+  publicado: false
+  bionexo: false
+
+two:
+  numero_licitacao: 1
+  ano_licitacao: 1
+  id_modalidade: 1
+  titulo: MyString
+  descricao: MyText
+  aviso: MyText
+  data_publicacao: 2010-11-23
+  data_abertura: 2010-11-23
+  publicado: false
+  bionexo: false

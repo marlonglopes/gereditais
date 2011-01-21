@@ -1,0 +1,51 @@
+<% title "Dados do Edital: #{@edital.titulo}" %>
+
+<table class="front" summary="For signed-in users">
+
+	<tr>
+		<td class="main">
+
+			<%=render 'show'%>
+
+			<% if logged_in? %>
+				<%= render 'microposts/form' %>
+			<% end %>
+
+			<%= render 'microposts/microposts' %>				
+
+		</td>
+
+		<% if logged_in? %>
+				<td class="sidebar round">
+							<div id="stats" class="round">					
+								<%= render 'shared/stats' %>
+							</div>
+			
+							<div id="uploads" class="round">	 
+								<%=render 'uploads/uploads'%>
+							</div>
+
+							<div id="impugnations" class="round">	 
+								<%=render 'impugnations/impugnations'%>
+							</div>
+				</td>
+		<% end %>
+	</tr>
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

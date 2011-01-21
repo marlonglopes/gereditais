@@ -1,0 +1,3 @@
+2010/12/14 18:30:52 [error] 20805#0: *4 "/home/marlon/railsprojects/gereditais/config/public/index.html" is not found (2: No such file or directory), client: 130.158.1.102, server: _, request: "GET / HTTP/1.0", host: "172.16.253.6:3000"
+2010/12/14 18:30:52 [error] 20805#0: *4 open() "/home/marlon/railsprojects/gereditais/config/public/favicon.ico" failed (2: No such file or directory), client: 130.158.1.102, server: _, request: "GET /favicon.ico HTTP/1.0", host: "172.16.253.6:3000"
+2010/12/14 18:30:53 [error] 20805#0: *4 "/home/marlon/railsprojects/gereditais/config/public/index.html" is not found (2: No such file or directory), client: 130.158.1.102, server: _, request: "GET / HTTP/1.0", host: "172.16.253.6:3000"

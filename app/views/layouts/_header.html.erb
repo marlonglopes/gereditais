@@ -1,0 +1,30 @@
+<header>
+
+	<%= link_to logo, "http://www.ghc.com.br" %>
+
+	<nav class="round">
+
+		<ul>
+				<li><%= link_to "Editais", editals_path %></li>
+
+			<% if logged_in? %>
+
+				<% if current_user.admin? %>			
+					<li><%= link_to "Usuários", users_path %></li>
+					<li><%= link_to "Modalidades", modalidades_path %></li>
+				<% end %>
+
+				<li><%= link_to "Dados do usuário ", edit_user_path  %><li>
+
+				<li><%= link_to "Log out", logout_path, :method => :delete %></li>
+
+			<% else %>
+				<li><%= link_to "Log in", login_path %></li>
+			<% end %>
+
+		</ul>
+
+	</nav>
+
+</header>
+

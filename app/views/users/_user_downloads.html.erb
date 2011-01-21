@@ -1,0 +1,18 @@
+
+	<% downloads ||= @user.group_by_editals.paginate(:page => params[:download_page], :per_page=>10)%>
+
+	<ul>
+
+	<% for download in downloads %>
+	<li>
+		<%= "#{download.edital.modalidade.descricao} #{download.edital.numero_licitacao}/#{download.edital.ano_licitacao}" %>
+		<%= pluralize(download.edital_count, "Download") %>
+	</li>
+	<% end%>
+
+	</ul>
+
+
+	<%= will_paginate downloads, :param_name => 'download_page' %>
+
+

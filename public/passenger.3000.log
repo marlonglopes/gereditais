@@ -1,0 +1,1 @@
+2010/12/10 18:46:13 [error] 14417#0: *4 "/home/administrator/railsprojects/gereditais/public/public/index.html" is not found (2: No such file or directory), client: 127.0.0.1, server: _, request: "GET / HTTP/1.1", host: "localhost:3000"

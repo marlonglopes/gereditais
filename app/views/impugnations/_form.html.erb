@@ -1,0 +1,50 @@
+<% if @count_imp!=0 %>
+
+	<div class="close_impugnations">
+    <%= image_tag "icons/cancel.png", :alt=>"Cancelar" %>
+	</div>
+
+	<script>
+
+	$('.close_impugnations').click(function() {
+		$('#impugnations').hide();
+		$('#impugnations').html("<%= escape_javascript( render 'impugnations/impugnations' )%>");
+		 $('#impugnations').fadeIn('slow', function() {
+			 // Animation complete.
+		  });
+	});
+
+	</script>
+
+<% end %>
+
+<% agora = Time.now %>
+<% abertura = @edital.abertura %>
+
+<% if agora < abertura %>
+
+	<%= form_for [@edital, @impugnation], :html => { :multipart => true } do |f| %>
+
+	   <%= f.error_messages %>
+
+		<%= f.hidden_field :edital_id, "value" => @edital.id %>
+		<%= f.hidden_field :user_id, "value" => current_user.id %>
+
+		<p>
+			<%= f.label :edital, "Selecione nova impugnação" %><br />
+			<%= f.file_field :arquivo  %>
+		</p>
+
+		<p><%= f.submit "Enviar impugnação" %></p>
+
+	<% end %>
+
+<% else %>
+	<div class="aviso_impugnacao">
+		Não é possível submeter impugnações, prazo até: <%= "#{@edital.data_abertura}, #{@edital.hora_abertura} " %>
+	</div>
+
+<% end %>
+
+
+

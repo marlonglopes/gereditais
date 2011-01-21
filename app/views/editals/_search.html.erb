@@ -1,0 +1,42 @@
+<div id="search" >
+
+		<%= form_for @search do |f| %>
+
+		  <p>
+			<%= f.label :modalidade_id_equals, "Modalidade:" %><br />
+			<%= f.select  "modalidade_id_equals",  @modalidades.map { |m| [ m.descricao, m.codigo ]}, {:include_blank => ''}, :class=>"clearme" %>
+		  </p>
+
+		 <p>
+			<%= f.label :find_by_licitacao, "Licitação:" %><br />
+			<%= f.text_field :find_by_licitacao, :class=>"clearme", :placeholder=>"Formato NNN/YYYY" %>
+		 </p>
+
+		 <p>
+			<%= f.label :descricao_or_aviso_contains, "Descrição do Edital:" %><br />
+			<%= f.text_field :descricao_or_aviso_contains, :class=>"clearme", :placeholder=>"Executa pesquisa nos campos descricão e aviso	" %>
+		 </p>
+
+			<p>
+				<%= f.label :data_publicacao, "Data de Publicação:" %><br />
+				<%= f.text_field :data_publicacao_eq, :value=>get_data(@search.data_publicacao_eq) , :class=>"data clearme", :placeholder=>"Maior ou igual" %>
+			</p>
+
+			<p>
+				<%= f.label :data_abertura, "Data de Abertura:" %><br />
+				<%= f.text_field :data_abertura_eq, :value=>get_data(@search.data_abertura_eq) ,:class=>"data clearme", :placeholder=>"Maior ou igual"%> 
+			</p>
+
+			<% if logged_in? and current_user.admin? %>
+			  <p>
+				<%= f.label :publicado, "Somente os não Publicados:" %><br />
+				<%= f.check_box :publicado_is_false , :class=>"clearme"%>
+			  </p>
+
+			<% end %>
+
+		<%= f.submit  "Executar Pesquisa" %> - <%=f.submit  "Limpar Campos", :type=>"reset", :class=>"reset_search", :id=>"reset_search"  %> <br /> 
+
+		<% end %>
+	
+</div>
