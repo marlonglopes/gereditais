@@ -5,9 +5,20 @@ class UploadsController < ApplicationController
   before_filter :login_required
 
   def upload
+
 		edital = Edital.find(params[:edital_id])
 		upload  = edital.upload.find(params[:id])
-	  	send_file upload.arquivo.path, :type => upload.arquivo_content_type
+
+		if current_user.admin?
+		  		send_file upload.arquivo.path, :type => upload.arquivo_content_type
+		else if upload.user==current_user
+	  				send_file upload.arquivo.path, :type => upload.arquivo_content_type
+	  			else
+					flash[:error] = "Usuário sem permissão para download dessa proposta"
+			  		redirect_to edital_path(edital)
+	  			end
+	  	end
+
   end
 
   def index
