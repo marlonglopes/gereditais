@@ -4,7 +4,9 @@
 
 			 <tr>
 				 <th><%= sort_link @search,  :descricao, "Descrição" %></th>
-				 <th><%= sort_link @search,  :publicado, "Publicado" %></th>
+				 <% if logged_in? and current_user.admin? %>			
+				 	<th><%= sort_link @search,  :publicado, "Publicado" %></th>
+				 <% end %>
 				 <th><%= sort_link @search,  :data_publicacao, "Data Publicação" %></th>
 				 <th><%= sort_link @search,  :data_abertura, "Data Abertura" %></th>
 			  </tr>

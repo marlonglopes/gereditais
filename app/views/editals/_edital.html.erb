@@ -39,7 +39,10 @@
 				<%= link_to "Exibir", edital %>
 			</p>
 		</td>
-		<td><%= (edital.publicado) ? "Sim" : "Não" %></td>
+
+		<% if logged_in? and current_user.admin? %>			
+			<td><%= (edital.publicado) ? "Sim" : "Não" %></td>
+		<% end %>
 		<td><%= edital.data_publicacao %></td>
 		<td><%= edital.data_abertura %></td>
 		</tr>

@@ -7,14 +7,14 @@ require 'faker'
 	namespace :db do
 		desc "Fill database with sample data"
 			task :populate => :environment do
-				Rake::Task['db:reset'].invoke
-				make_users
-				make_modalidades
-#				make_editals
+#				Rake::Task['db:reset'].invoke
+#				make_users
+#				make_modalidades
+				make_editals
 #				make_microposts
 #				make_relationships
-				import_companies
-#				import_ceps
+#				import_companies
+				import_ceps
 		end
 	end
 
