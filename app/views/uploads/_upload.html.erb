@@ -1,5 +1,4 @@
 
-
 <div class="upload">
 	
 
@@ -11,9 +10,18 @@
 	<%= link_to image_tag("icons/pencil.png",:alt=>"Alterar proposta"),
 				edit_edital_upload_path(@edital,upload), :remote=>true unless current_user.admin?%>
 		</div>
-		
+
+<% agora = Time.now %>
+<% abertura = @edital.abertura %>
+
+	
 		<span class="timestamp">
-			<%=  link_to "Proposta", path %> postado a  <%= time_ago_in_words(upload.updated_at) %>
+
+			<% if agora < abertura %>
+				Proposta postada a  <%= time_ago_in_words(upload.updated_at) %>
+			<% else %>
+				<%=  link_to "Proposta", path %> postada a  <%= time_ago_in_words(upload.updated_at) %>
+			<% end %>
 		</span>
 
 	<div class="clear"></div>
