@@ -17,11 +17,16 @@
 	
 		<span class="timestamp">
 
+		<% if current_user.admin? %>	
 			<% if agora < abertura %>
 				Proposta postada a  <%= time_ago_in_words(upload.updated_at) %>
 			<% else %>
 				<%=  link_to "Proposta", path %> postada a  <%= time_ago_in_words(upload.updated_at) %>
 			<% end %>
+		<% else %>
+				<%=  link_to "Proposta", path %> postada a  <%= time_ago_in_words(upload.updated_at) %>
+		<% end %>
+		
 		</span>
 
 	<div class="clear"></div>
