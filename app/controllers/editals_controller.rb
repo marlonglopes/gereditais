@@ -10,8 +10,13 @@ class EditalsController < ApplicationController
 	cache_sweeper :edital_sweeper, :only=>[:create, :update, :destroy]
 
 	def edital
-		edital = Edital.find(params[:id])
-		send_file edital.edital.path, :type => edital.edital_content_type
+		begin
+			edital = Edital.find(params[:id])
+			send_file edital.edital.path, :type => edital.edital_content_type
+		rescue
+			flash[:error] = "Não foi possível fazer download do Edital"
+	  		redirect_to root_path
+		end
 	end
 
 

@@ -6,11 +6,19 @@ class UploadsController < ApplicationController
 
   def upload
 
+		begin
 		edital = Edital.find(params[:edital_id])
 		upload  = edital.upload.find(params[:id])
 
 		if current_user.admin?
-		  		send_file upload.arquivo.path, :type => upload.arquivo_content_type
+				agora = Time.now 
+				abertura = edital.abertura 
+				if agora < abertura
+					flash[:error] = "Não é possível ver propostas antes da data de abertura"
+			  		redirect_to edital_path(edital)
+				else 
+		  			send_file upload.arquivo.path, :type => upload.arquivo_content_type
+				end
 		else if upload.user==current_user
 	  				send_file upload.arquivo.path, :type => upload.arquivo_content_type
 	  			else
@@ -18,7 +26,10 @@ class UploadsController < ApplicationController
 			  		redirect_to edital_path(edital)
 	  			end
 	  	end
-
+		rescue
+			flash[:error] = "Não foi possível fazer download da proposta"
+	  		redirect_to root_path
+		end
   end
 
   def index
