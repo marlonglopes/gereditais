@@ -13,12 +13,12 @@
 		 </p>
 
 		 <p>
-			<%= f.label :descricao_or_aviso_contains, "Descrição do Edital:" %><br />
+			<%= f.label :descricao_or_aviso_contains, "Descricao do Edital:" %><br />
 			<%= f.text_field :descricao_or_aviso_contains, :class=>"clearme", :placeholder=>"Executa pesquisa nos campos descricão e aviso	" %>
 		 </p>
 
 			<p>
-				<%= f.label :data_publicacao, "Data de Publicação:" %><br />
+				<%= f.label :data_publicacao, "Data de Publicacao:" %><br />
 				<%= f.text_field :data_publicacao_eq, :value=>get_data(@search.data_publicacao_eq) , :class=>"data clearme", :placeholder=>"Maior ou igual" %>
 			</p>
 
