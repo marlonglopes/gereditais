@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 <div id="search" >
 
 		<%= form_for @search do |f| %>
@@ -8,17 +10,17 @@
 		  </p>
 
 		 <p>
-			<%= f.label :find_by_licitacao, "Licitacao:" %><br /> 
+			<%= f.label :find_by_licitacao, "Licitação:" %><br /> 
 			<%= f.text_field :find_by_licitacao, :class=>"clearme", :placeholder=>"Formato NNN/YYYY" %>
 		 </p>
 
 		 <p>
-			<%= f.label :descricao_or_aviso_contains, "Descricao do Edital:" %><br />
-			<%= f.text_field :descricao_or_aviso_contains, :class=>"clearme", :placeholder=>"Executa pesquisa nos campos descricao e aviso	" %>
+			<%= f.label :descricao_or_aviso_contains, "Descrição do Edital:" %><br />
+			<%= f.text_field :descricao_or_aviso_contains, :class=>"clearme", :placeholder=>"Executa pesquisa nos campos descrição e aviso	" %>
 		 </p>
 
 			<p>
-				<%= f.label :data_publicacao, "Data de Publicacao:" %><br />
+				<%= f.label :data_publicacao, "Data de Publicação:" %><br />
 				<%= f.text_field :data_publicacao_eq, :value=>get_data(@search.data_publicacao_eq) , :class=>"data clearme", :placeholder=>"Maior ou igual" %>
 			</p>
 
