@@ -1,3 +1,5 @@
+# encoding: utf-8 
+
 module EditalsHelper
 
 	def download_url(edital)
