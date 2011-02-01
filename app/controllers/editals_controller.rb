@@ -42,9 +42,6 @@ class EditalsController < ApplicationController
 	end
 
 
-
-
-
   def index
 
 	@modalidades ||= Modalidade.scoped(:order => "descricao")
