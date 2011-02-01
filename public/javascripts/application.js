@@ -15,6 +15,13 @@
 
 /////////////////
 
+
+
+//$('#sub1').click(function() {
+// 	$('#new_download').submit();
+//  	return false;
+//});
+
 $('#user_cep').blur(function(event) {
 
 	var root=$('#endereco_empresa').attr("data-root");

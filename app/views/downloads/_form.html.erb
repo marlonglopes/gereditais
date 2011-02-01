@@ -18,7 +18,7 @@
 			<%= f.hidden_field :edital_id, "value" => @edital.id %>
 			<%= f.hidden_field :user_id, "value" => current_user.id %>
 
-			<%= f.submit "Download !", :class => "signup_button round" %>
+			<%= f.submit "Download !",:id=>"submit_download", :class => "signup_button round" %>
 		<% end %>
 </div>
 

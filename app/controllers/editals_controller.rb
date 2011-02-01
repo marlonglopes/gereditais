@@ -9,30 +9,16 @@ class EditalsController < ApplicationController
 	caches_page :index, :show
 	cache_sweeper :edital_sweeper, :only=>[:create, :update, :destroy]
 
-#	def edital
-
-#		begin
-#			edital = Edital.find(params[:id])
-#			send_file edital.edital.path, :type => edital.edital_content_type
-#		rescue
-#			flash[:error] = "Não foi possível fazer download do Edital"
-#	  		redirect_to root_path
-#		end
-
-#	end
-
 	def edital
 
 		begin
-
-			@edital=Edital.find(params[:id])
-			@download=@edital.download.new(:user=>current_user)
-
-			if @download.save!
-				send_file @edital.edital.path, :type => @edital.edital_content_type
+			if session[:save]
+				edital = Edital.find(params[:id])
+				send_file edital.edital.path, :type => edital.edital_content_type
+				session[:save]=false
 			else
 				flash[:error] = "Não foi possível fazer download do Edital"
-	  			redirect_to new_edital_download_path(@edital)
+		  		redirect_to new_edital_download_path(@edital)
 			end
 		rescue
 			flash[:error] = "Não foi possível fazer download do Edital"
@@ -40,6 +26,26 @@ class EditalsController < ApplicationController
 		end
 
 	end
+
+#	def edital
+
+#		begin
+
+#			@edital=Edital.find(params[:id])
+#			@download=@edital.download.new(:user=>current_user)
+
+#			if @download.save!
+#				send_file @edital.edital.path, :type => @edital.edital_content_type
+#			else
+#				flash[:error] = "Não foi possível fazer download do Edital"
+#	  			redirect_to new_edital_download_path(@edital)
+#			end
+#		rescue
+#			flash[:error] = "Não foi possível fazer download do Edital"
+#	  		redirect_to root_path
+#		end
+
+#	end
 
 
   def index
