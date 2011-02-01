@@ -40,24 +40,35 @@ class DownloadsController < ApplicationController
 #	end
 
 	def create
-
+		session[:save]=false
 		if params[:edital_id] 
 
 			@edital=Edital.find_by_id(params[:edital_id])
-			@download=@edital.download.new(:user=>current_user)
-			session[:save]=false
-			if @download.save!
-				session[:save]=true
-				respond_to do |format|
-					format.html 
-					format.js
+
+			agora = Time.now 
+			abertura = @edital.abertura 
+			
+			if agora > abertura
+
+				@download=@edital.download.new(:user=>current_user)
+				
+				if @download.save!
+					session[:save]=true
+					respond_to do |format|
+						format.html 
+						format.js
+					end
+				else
+					flash[:error] = "Download não efetuado."
+#					redirect_to @edital
 				end
 			else
-				  flash[:error] = "Download não efetuado."
-				  redirect_to @edital			
+			  flash[:error] = "Após data da abertura não é possivel efetuar download"
+#			  redirect_to @edital
 			end
+
 		else
-			redirect_to root_path
+#			redirect_to root_path
 		end
 
 	end

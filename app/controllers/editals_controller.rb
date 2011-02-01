@@ -18,11 +18,15 @@ class EditalsController < ApplicationController
 				session[:save]=false
 			else
 				flash[:error] = "Não foi possível fazer download do Edital"
-		  		redirect_to new_edital_download_path(@edital)
+		  		redirect_to root_path
+#		  		redirect_to new_edital_download_path(@edital)
+#				render :action=>"create", :controller=>"downloads"
 			end
 		rescue
 			flash[:error] = "Não foi possível fazer download do Edital"
 	  		redirect_to root_path
+#	  		redirect_to root_path
+#			render :action=>"create", :controller=>"downloads"
 		end
 
 	end
