@@ -47,8 +47,11 @@ class EditalsController < ApplicationController
 	@modalidades ||= Modalidade.scoped(:order => "descricao")
 
  	begin
-		params[:search][:data_abertura_eq]=get_data(params[:search][:data_abertura_eq])
-		params[:search][:data_publicacao_eq]=get_data(params[:search][:data_publicacao_eq])
+		params[:search][:data_abertura_gteq]=get_data(params[:search][:data_abertura_gteq])
+		params[:search][:data_abertura_lteq]=get_data(params[:search][:data_abertura_lteq])
+
+		params[:search][:data_publicacao_gteq]=get_data(params[:search][:data_publicacao_gteq])
+		params[:search][:data_publicacao_lteq]=get_data(params[:search][:data_publicacao_lteq])
 	rescue
 	end
 

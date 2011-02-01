@@ -19,13 +19,19 @@
 		 </p>
 
 			<p>
-				<%= f.label :data_publicacao, "Data de Publicação:" %><br />
-				<%= f.text_field :data_publicacao_eq, :value=>get_data(@search.data_publicacao_eq) , :class=>"data clearme", :placeholder=>"Maior ou igual" %>
+				<%= f.label :data_publicacao_gteq, "Data da publicação:" %><br />
+				<%= f.text_field :data_publicacao_gteq, :value=>get_data(@search.data_publicacao_gteq) , :class=>"data clearme", :placeholder=>"de" %>
+
+				<%= f.label :data_publicacao_lteq, "-" %>
+				<%= f.text_field :data_publicacao_lteq, :value=>get_data(@search.data_publicacao_lteq) , :class=>"data clearme", :placeholder=>"até" %>
 			</p>
 
 			<p>
-				<%= f.label :data_abertura, "Data de Abertura:" %><br />
-				<%= f.text_field :data_abertura_eq, :value=>get_data(@search.data_abertura_eq) ,:class=>"data clearme", :placeholder=>"Maior ou igual"%> 
+				<%= f.label :data_abertura_gteq, "Data da abertura:" %><br />
+				<%= f.text_field :data_abertura_gteq, :value=>get_data(@search.data_abertura_gteq) , :class=>"data clearme", :placeholder=>"de" %>
+
+				<%= f.label :data_abertura_lteq, "-" %>
+				<%= f.text_field :data_abertura_lteq, :value=>get_data(@search.data_abertura_lteq) , :class=>"data clearme", :placeholder=>"até" %>
 			</p>
 
 			<% if logged_in? and current_user.admin? %>
