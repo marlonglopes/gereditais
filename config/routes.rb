@@ -1,8 +1,5 @@
 Gereditais::Application.routes.draw do
 
-#   match '/downloads(/:edital)' => 'downloads#new', :as=>:new_download, :via => [:get]
-#   match '/downloads(/:edital)' => 'downloads#create', :as=>:create_download, :via => [:post]
-
 	resources :ceps
 	
 	resources :sessions
@@ -11,18 +8,19 @@ Gereditais::Application.routes.draw do
 	resources :modalidades
 
 	resources :editals do
+		member do
+			get 'edital'
+		end
+
 		resources :downloads
 		resources :uploads do
 			member do
 				get 'upload'
 			end
 		end
+
 		resources :impugnations
 		resources :microposts
-
-       member do
-         get 'edital'
-       end
 
 	end
 
