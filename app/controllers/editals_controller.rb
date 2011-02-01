@@ -17,6 +17,7 @@ class EditalsController < ApplicationController
 			flash[:error] = "Não foi possível fazer download do Edital"
 	  		redirect_to root_path
 		end
+
 	end
 
 
