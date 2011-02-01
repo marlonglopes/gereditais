@@ -14,7 +14,7 @@ require 'faker'
 #				make_microposts
 #				make_relationships
 #				import_companies
-				import_ceps
+#				import_ceps
 		end
 	end
 
@@ -229,8 +229,8 @@ require 'faker'
 
 	def import_ceps
 
-#		ch="0"
-		ch='^|"DAT,GHC"|TABCEP(83707210)'
+		ch="0"
+#		ch='^|"DAT,GHC"|TABCEP(83707210)'
 		puts "#{ch}"
 		gl=""
 
