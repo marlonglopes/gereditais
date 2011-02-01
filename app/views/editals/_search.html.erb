@@ -19,19 +19,19 @@
 		 </p>
 
 			<p>
-				<%= f.label :data_publicacao_gteq, "Data da publicação:" %><br />
-				<%= f.text_field :data_publicacao_gteq, :value=>get_data(@search.data_publicacao_gteq) , :class=>"data clearme", :placeholder=>"de" %>
+				<%= f.label :data_publicacao_gte, "Data da publicação:" %><br />
+				<%= f.text_field :data_publicacao_gte, :value=>get_data(@search.data_publicacao_gte) , :class=>"data clearme", :placeholder=>"de" %>
 
-				<%= f.label :data_publicacao_lteq, "-" %>
-				<%= f.text_field :data_publicacao_lteq, :value=>get_data(@search.data_publicacao_lteq) , :class=>"data clearme", :placeholder=>"até" %>
+				<%= f.label :data_publicacao_lte, "-" %>
+				<%= f.text_field :data_publicacao_lte, :value=>get_data(@search.data_publicacao_lte) , :class=>"data clearme", :placeholder=>"até" %>
 			</p>
 
 			<p>
-				<%= f.label :data_abertura_gteq, "Data da abertura:" %><br />
-				<%= f.text_field :data_abertura_gteq, :value=>get_data(@search.data_abertura_gteq) , :class=>"data clearme", :placeholder=>"de" %>
+				<%= f.label :data_abertura_gte, "Data da abertura:" %><br />
+				<%= f.text_field :data_abertura_gte, :value=>get_data(@search.data_abertura_gte) , :class=>"data clearme", :placeholder=>"de" %>
 
-				<%= f.label :data_abertura_lteq, "-" %>
-				<%= f.text_field :data_abertura_lteq, :value=>get_data(@search.data_abertura_lteq) , :class=>"data clearme", :placeholder=>"até" %>
+				<%= f.label :data_abertura_lte, "-" %>
+				<%= f.text_field :data_abertura_lte, :value=>get_data(@search.data_abertura_lte) , :class=>"data clearme", :placeholder=>"até" %>
 			</p>
 
 			<% if logged_in? and current_user.admin? %>
