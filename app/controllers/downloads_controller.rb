@@ -30,25 +30,37 @@ class DownloadsController < ApplicationController
 
 	def create
 
-		if params[:edital_id] 
+		@edital=Edital.find(params[:edital_id])
 
-			@edital=Edital.find_by_id(params[:edital_id])
-			@download=@edital.download.new(:user=>current_user)
-
-			if @download.save!
-				respond_to do |format|
-					format.html {redirect_to new_edital_download_path(@edital),:success=> "Download efetuado com sucesso."}
-					format.js
-				end
-			else
-				  flash[:error] = "Download não efetuado."
-				  redirect_to @edital			
-			end
-		else
-			redirect_to root_path
+		respond_to do |format|
+			format.html 
+			format.js
 		end
 
 	end
+
+#	def create
+
+#		if params[:edital_id] 
+
+#			@edital=Edital.find_by_id(params[:edital_id])
+#			@download=@edital.download.new(:user=>current_user)
+
+#			if @download.save!
+
+#				respond_to do |format|
+#					format.html 
+#					format.js
+#				end
+#			else
+#				  flash[:error] = "Download não efetuado."
+#				  redirect_to @edital			
+#			end
+#		else
+#			redirect_to root_path
+#		end
+
+#	end
 
 	def show
 
