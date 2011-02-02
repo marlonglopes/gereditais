@@ -156,6 +156,8 @@ private
 
 	def get_data(data,tr)
 
+		return if data.empty?
+
 		date=data.split("/")
 
 		hora="23:59"
