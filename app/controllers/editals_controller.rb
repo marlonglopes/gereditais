@@ -57,11 +57,11 @@ class EditalsController < ApplicationController
 	@modalidades ||= Modalidade.scoped(:order => "descricao")
 
  	begin
-		params[:search][:data_abertura_gte]=get_data(params[:search][:data_abertura_gte])
-		params[:search][:data_abertura_lte]=get_data(params[:search][:data_abertura_lte])
+		params[:search][:data_abertura_gte]=get_data(params[:search][:data_abertura_gte],0)
+		params[:search][:data_abertura_lte]=get_data(params[:search][:data_abertura_lte],1)
 
-		params[:search][:data_publicacao_gte]=get_data(params[:search][:data_publicacao_gte])
-		params[:search][:data_publicacao_lte]=get_data(params[:search][:data_publicacao_lte])
+		params[:search][:data_publicacao_gte]=get_data(params[:search][:data_publicacao_gte],0)
+		params[:search][:data_publicacao_lte]=get_data(params[:search][:data_publicacao_lte],1)
 	rescue
 	end
 
@@ -154,9 +154,19 @@ class EditalsController < ApplicationController
 
 private
 
-	def get_data(data)
+	def get_data(data,tr)
+
 		date=data.split("/")
-		Date.parse("#{date[2].to_i}/#{date[1].to_i}/#{date[0].to_i}")
+
+		hora="23:59"
+		data="#{date[2].to_i}/#{date[1].to_i}/#{date[0].to_i}"
+
+		if tr==1
+			Time.parse("#{data} #{hora}")
+		else
+			Date.parse("#{data}")
+		end
+
 	end
 
 end
