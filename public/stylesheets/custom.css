@@ -1,3 +1,13 @@
+#password {
+	margin:0.5em 0;
+	border-color:#666;
+	background-color:#fff;
+	border:1px solid #bbb;
+	width:380px;
+	padding:5px;
+}
+
+
 div.clear {
   border-top:1px solid #ccc;
   width:100%;

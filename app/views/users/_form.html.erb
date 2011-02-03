@@ -1,30 +1,39 @@
 <%= form_for @user do |f| %>
 
-<%= f.error_messages %>
 
+<%= f.error_messages %>
 <table>
+
+
 
 <tr>
 <td >
+
+ <fieldset class="round"> 
+ <legend>Dados para login</legend> 
+
 	<div class="dados_usuario round">
 	  <p>
 		 <%= f.label :username, "Usuario" %><br />
-		 <%= f.text_field :username, :class=>"user_username" %>
+		 <%= f.text_field :username, :class=>"user_username text" %>
 		<span class="timestamp">Apenas letras, numeros, ou .-_@</span>
 	  </p>
 	  <p>
 		 <%= f.label :email, "Email" %><br />
-		 <%= f.text_field :email %>
+		 <%= f.text_field :email, :class=>"text" %>
 	  </p>
 	  <p>
 		 <%= f.label :password , "Senha"%><br />
-		 <%= f.password_field :password %>
+		 <%= f.password_field :password, :class=>"text" %>
 	  </p>
 	  <p>
 		 <%= f.label :password_confirmation, "Confirma Senha" %><br />
-		 <%= f.password_field :password_confirmation %>
+		 <%= f.password_field :password_confirmation, :class=>"text" %>
 	  </p>
 	</div>
+
+ </fieldset> 
+
 </td>
 
 <td>
@@ -35,36 +44,40 @@
 
 <tr>
 <td >
+
+<fieldset class="round"> 
+ <legend>Dados da Empresa</legend> 
+
 	<div class="dados_empresa round">
 	  <p>
 		 <%= f.label :cnpj_cpf, "CNPJ ou CPF" %><br />
-		 <%= f.text_field :cnpj_cpf %>
+		 <%= f.text_field :cnpj_cpf , :class=>"text"%>
 	  </p>
 
 	  <p>
 		 <%= f.label :inscr_estatual, "inscrição Estatual" %><br />
-		 <%= f.text_field :inscr_estatual %>
+		 <%= f.text_field :inscr_estatual , :class=>"text"%>
 	  </p>
 
 
 	  <p>
 		 <%= f.label :razao_social, "Razão Social ou Nome completo" %><br />
-		 <%= f.text_field :razao_social %>
+		 <%= f.text_field :razao_social, :class=>"text" %>
 	  </p>
 
 	  <p>
 		 <%= f.label :fone, "Fone" %><br />
-		 <%= f.text_field :fone %>
+		 <%= f.text_field :fone , :class=>"text"%>
 	  </p>
 
 	  <p>
 		 <%= f.label :fax, "Fax" %><br />
-		 <%= f.text_field :fax %>
+		 <%= f.text_field :fax , :class=>"text"%>
 	  </p>
 
 	  <p>
 		 <%= f.label :contato, "Contato" %><br />
-		 <%= f.text_field :contato %>
+		 <%= f.text_field :contato , :class=>"text"%>
 	  </p>
 	  <p>
 	  &nbsp
@@ -74,14 +87,20 @@
 	  </p>
 
 	</div>
+
+</fieldset> 
+
 </td>
 
 <td >
 
+<fieldset class="round"> 
+ <legend>Endereço da Empresa</legend> 
+
 	<div class="endereco_empresa round" id="endereco_empresa" data-root="<%=root_url%>" >
 	  <p>
 		 <%= f.label :cep, "CEP" %><br />
-		 <%= f.text_field :cep %>
+		 <%= f.text_field :cep , :class=>"text"%>
 		<span id="wait_cep" style="display:none"> 
 			<%= image_tag "indicator_arrows_circle.gif" %> Localizando ...
 		</span> 
@@ -89,35 +108,37 @@
 
 	  <p>
 		 <%= f.label :logradouro, "Logradouro" %><br />
-		 <%= f.text_field :logradouro, :readonly => true %>
+		 <%= f.text_field :logradouro, :readonly => true, :class=>"text" %>
 	  </p>
 
 	  <p>
 		 <%= f.label :numero, "Número" %><br />
-		 <%= f.text_field :numero %>
+		 <%= f.text_field :numero , :class=>"text"%>
 	  </p>
 
 	  <p>
 		 <%= f.label :complemento, "Complemento" %><br />
-		 <%= f.text_field :complemento %>
+		 <%= f.text_field :complemento, :class=>"text" %>
 	  </p>
 
 	  <p>
 		 <%= f.label :bairro, "Bairro" %><br />
-		 <%= f.text_field :bairro, :readonly => true %>
+		 <%= f.text_field :bairro, :readonly => true, :class=>"text" %>
 	  </p>
 
 	  <p>
 		 <%= f.label :cidade, "Cidade" %><br />
-		 <%= f.text_field :cidade, :readonly => true %>
+		 <%= f.text_field :cidade, :readonly => true , :class=>"text"%>
 	  </p>
 
 	  <p>
 		 <%= f.label :uf, "UF" %><br />
-		 <%= f.text_field :uf , :readonly => true%>
+		 <%= f.text_field :uf , :readonly => true, :class=>"text"%>
 	  </p>
 
 	</div>
+
+</fieldset> 
 
 
 </td>
@@ -127,4 +148,5 @@
 
 <p><%= f.submit @user.new_record? ? "Salvar Cadastro" : "Atualizar Cadastro" %></p>
 
+ 
 <% end %>
