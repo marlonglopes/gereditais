@@ -8,7 +8,7 @@ class ImpugnationMailer < ActionMailer::Base
 	 @user=user
 	 @edital=edital
     attachments[impugnation.arquivo_file_name] = File.read(impugnation.arquivo.path)  
-	 mail(:to => ["marlonglopes@gmail.com", "lmarlon@ghc.com.br"] , :subject => "Nova Impugnação")  do |format|
+	 mail(:to => "marlonglopes@gmail.com, lmarlon@ghc.com.br" , :subject => "Nova Impugnação")  do |format|
 		format.text
 		format.html
 	 end
@@ -24,7 +24,7 @@ class ImpugnationMailer < ActionMailer::Base
 	 @user=user
 	 @edital=edital
     attachments[impugnation.arquivo_file_name] = File.read(impugnation.arquivo.path) 
-	 mail(:to => ["marlonglopes@gmail.com", "lmarlon@ghc.com.br"] , :subject => "Alteração Impugnação")  do |format|
+	 mail(:to => "marlonglopes@gmail.com, lmarlon@ghc.com.br" , :subject => "Alteração Impugnação")  do |format|
 		format.text
 		format.html
 	 end
