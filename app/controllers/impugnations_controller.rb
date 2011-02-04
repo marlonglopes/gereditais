@@ -7,7 +7,12 @@ class ImpugnationsController < ApplicationController
 
 
 	def impugnation
-		
+		begin
+			edital = Edital.find(params[:edital_id])
+			impugnation  = edital.impugnation.find(params[:id])
+			send_file impugnation.arquivo.path, :type => impugnation.arquivo_content_type
+		rescue
+		end		
 	end
 
   def index
