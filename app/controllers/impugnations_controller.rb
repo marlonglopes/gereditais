@@ -5,6 +5,11 @@ class ImpugnationsController < ApplicationController
 	before_filter :login_required
 	before_filter :check_admin, :only => [:index, :show]
 
+
+	def impugnation
+		
+	end
+
   def index
 	 @edital=Edital.find_by_id(params[:edital_id])
     @impugnations = @edital.impugnation.scoped

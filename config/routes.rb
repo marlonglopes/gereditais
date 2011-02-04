@@ -13,13 +13,19 @@ Gereditais::Application.routes.draw do
 		end
 
 		resources :downloads
+
 		resources :uploads do
 			member do
 				get 'upload'
 			end
 		end
 
-		resources :impugnations
+		resources :impugnations do
+			member do
+				get 'impugnation'
+			end
+		end
+
 		resources :microposts
 
 	end
