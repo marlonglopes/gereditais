@@ -78,7 +78,6 @@ class ImpugnationsController < ApplicationController
         format.html { redirect_to(@impugnation.edital) }
       else
   		  flash[:error] = "Impugnação no formáto inválido."
-  		  flash[:impugnation_error] = "Impugnação no formáto inválido."
         format.html { redirect_to(@impugnation.edital) }
       end
     end
@@ -96,7 +95,6 @@ class ImpugnationsController < ApplicationController
         format.html { redirect_to(@impugnation.edital) }
       else
 		  flash[:error] = "Impugnação no formáto inválido."
-		  flash[:impugnation_error] = "Impugnação no formáto inválido."
         format.html { redirect_to(@impugnation.edital) }
       end
     end

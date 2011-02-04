@@ -59,13 +59,12 @@ class UploadsController < ApplicationController
 	@upload = @edital.upload.new(params[:upload])
 
     if @upload.save
-      flash[:notice] = "Upload efetuado com sucesso."
+      flash[:success] = "Upload efetuado com sucesso."
       respond_to do |format|
         format.html { redirect_to @upload.edital }
       end
     else
       flash[:error] = "Problemas no envio do arquivo. Enviar apenas arquivos .pdf"
-      flash[:upload_error] = "Problemas no envio do arquivo. Enviar apenas arquivos .pdf"
       redirect_to @upload.edital
     end
 
@@ -86,11 +85,10 @@ class UploadsController < ApplicationController
     @edital = Edital.find(params[:edital_id])
     @upload = @edital.upload.find(params[:id])
     if @upload.update_attributes(params[:upload])
-      flash[:notice] = "Atualização de upload com sucesso."
+      flash[:success] = "Atualização de upload com sucesso."
       redirect_to @upload.edital
     else
       flash[:error] = "Problemas no envio do arquivo. Enviar apenas arquivos .pdf"
-      flash[:upload_error] = "Problemas no envio do arquivo. Enviar apenas arquivos .pdf"
       redirect_to @upload.edital
     end
   end
@@ -99,7 +97,7 @@ class UploadsController < ApplicationController
  	 @edital = Edital.find(params[:edital_id])
     @upload = @edital.upload.find(params[:id])
     @upload.destroy
-    flash[:notice] = "Upload apagado com sucesso."
+    flash[:success] = "Upload apagado com sucesso."
     redirect_to uploads_url
   end
   
