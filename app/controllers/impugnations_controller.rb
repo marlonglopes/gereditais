@@ -12,6 +12,8 @@ class ImpugnationsController < ApplicationController
 			impugnation  = edital.impugnation.find(params[:id])
 			send_file impugnation.arquivo.path, :type => impugnation.arquivo_content_type
 		rescue
+		  	flash[:error] = "Impugnação nao pode ser baixada."
+			redirect_to root_path
 		end		
 	end
 
@@ -72,7 +74,7 @@ class ImpugnationsController < ApplicationController
       if @impugnation.save
 #        ImpugnationMailer.impugnation_create(@edital , current_user, @impugnation).deliver  
         ImpugnationMailer.delay.impugnation_create(@edital , current_user, @impugnation)
-		  flash[:notice] = "Impugnação enviada com sucesso."
+		  flash[:success] = "Impugnação enviada com sucesso."
         format.html { redirect_to(@impugnation.edital) }
       else
   		  flash[:error] = "Impugnação no formáto inválido."
@@ -90,7 +92,7 @@ class ImpugnationsController < ApplicationController
       if @impugnation.update_attributes(params[:impugnation])
 #       ImpugnationMailer.impugnation_update(@edital , current_user,@impugnation).deliver  
         ImpugnationMailer.delay.impugnation_update(@edital , current_user,@impugnation)
-		  flash[:notice] = "Impugnação atualizada com sucesso."
+		  flash[:success] = "Impugnação atualizada com sucesso."
         format.html { redirect_to(@impugnation.edital) }
       else
 		  flash[:error] = "Impugnação no formáto inválido."

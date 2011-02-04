@@ -1,7 +1,7 @@
 
 <div class="impugnation">
 
-	<% path="#{ENV['RAILS_RELATIVE_URL_ROOT']}#{impugnation.arquivo.url}" %>
+	<% path= impugnation_edital_impugnation_path(@edital,impugnation)  %>
 
 	<%= "#{impugnation.user.razao_social}" if current_user.admin?%>
 
@@ -11,7 +11,7 @@
 
 
 	<span class="timestamp">
-		<%= link_to impugnation.arquivo_file_name,path %> postado a <%= time_ago_in_words(impugnation.updated_at) %>
+		<%= link_to "Impugnação",path %> postado a <%= time_ago_in_words(impugnation.updated_at) %>
 	</span>
 
 	<div class="clear"></div>
