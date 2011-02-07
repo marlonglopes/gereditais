@@ -22,6 +22,7 @@ gem 'meta_search'
 
 gem 'remotipart'
 gem 'delayed_job'
+
 gem 'mail'
 
 group :development do
