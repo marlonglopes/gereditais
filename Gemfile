@@ -22,7 +22,7 @@ gem 'meta_search'
 
 gem 'remotipart'
 gem 'delayed_job'
-gem 'mail'
+
 
 group :development do
 	gem 'rspec-rails', '2.0.1'
