@@ -6,13 +6,19 @@ class UserMailer < ActionMailer::Base
 
 	def user_create(user)  
 	 @user=user
-	 mail(:to => user.email, :subject => "Novo Cadastro")  
+	 mail(:to => user.email, :subject => "Novo Cadastro")  do |format|
+             format.text
+             format.html
+      end
 	end  
 
 
 	def user_update(user)  
 	 @user=user
-	 mail(:to => user.email, :subject => "Alteração de Cadastro") 
+	 mail(:to => user.email, :subject => "Alteração de Cadastro")  do |format|
+             format.text
+             format.html
+      end
 	end  
 
 end
