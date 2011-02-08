@@ -72,8 +72,8 @@ class ImpugnationsController < ApplicationController
 
     respond_to do |format|
       if @impugnation.save
-#        ImpugnationMailer.impugnation_create(@edital , current_user, @impugnation).deliver  
-        ImpugnationMailer.delay.impugnation_create(@edital , current_user, @impugnation)
+        ImpugnationMailer.impugnation_create(@edital , current_user, @impugnation).deliver  
+#        ImpugnationMailer.delay.impugnation_create(@edital , current_user, @impugnation)
 		  flash[:success] = "Impugnação enviada com sucesso."
         format.html { redirect_to(@impugnation.edital) }
       else
@@ -89,8 +89,8 @@ class ImpugnationsController < ApplicationController
 
     respond_to do |format|
       if @impugnation.update_attributes(params[:impugnation])
-#       ImpugnationMailer.impugnation_update(@edital , current_user,@impugnation).deliver  
-        ImpugnationMailer.delay.impugnation_update(@edital , current_user,@impugnation)
+       ImpugnationMailer.impugnation_update(@edital , current_user,@impugnation).deliver  
+#        ImpugnationMailer.delay.impugnation_update(@edital , current_user,@impugnation)
 		  flash[:success] = "Impugnação atualizada com sucesso."
         format.html { redirect_to(@impugnation.edital) }
       else

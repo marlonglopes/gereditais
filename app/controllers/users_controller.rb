@@ -30,8 +30,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       flash[:notice] = "Voce está logado."
       flash[:success] = "perfil criado com sucesso."
-		UserMailer.user_create(@user).deliver
-#		UserMailer.delay.user_create(@user)
+#		UserMailer.user_create(@user).deliver
+		UserMailer.delay.user_create(@user)
       redirect_to root_path
     else
       render :action => 'new'
@@ -46,8 +46,8 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update_attributes(params[:user])
       flash[:success] = "Seu perfil foi atualizado."
-  		UserMailer.user_update(@user).deliver
-#  		UserMailer.delay.user_update(@user) 
+#  		UserMailer.user_update(@user).deliver
+  		UserMailer.delay.user_update(@user) 
       redirect_to root_path
     else
       render :action => 'edit'
