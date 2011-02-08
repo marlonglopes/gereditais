@@ -33,17 +33,17 @@ class UploadsController < ApplicationController
   end
 
   def index
-	 @edital=Edital.find_by_id(params[:edital_id])
+	 @edital=Edital.find(params[:edital_id])
 	 @uploads = @edital.upload.scoped
   end
   
   def show
-	 @edital=Edital.find_by_id(params[:edital_id])
+	 @edital=Edital.find(params[:edital_id])
     @upload = @edital.upload.find(params[:id])
   end
   
   def new
-	 @edital=Edital.find_by_id(params[:edital_id])
+	 @edital=Edital.find(params[:edital_id])
     @upload = @edital.upload.new
 
  	respond_to do |format|
@@ -55,7 +55,7 @@ class UploadsController < ApplicationController
   
   def create
 
-	@edital=Edital.find_by_id(params[:upload][:edital_id])
+	@edital=Edital.find(params[:upload][:edital_id])
 	@upload = @edital.upload.new(params[:upload])
 
     if @upload.save
