@@ -48,7 +48,7 @@ class DownloadsController < ApplicationController
 			agora = Time.now 
 			abertura = @edital.abertura 
 			
-			if agora > abertura
+			if agora < abertura
 
 				@download=@edital.download.new(:user=>current_user)
 				
