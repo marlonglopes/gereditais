@@ -15,12 +15,12 @@
 	<div class="dados_usuario round">
 	  <p>
 		 <%= f.label :username, "Usuario" %><br />
-		 <%= f.text_field :username, :class=>"user_username text" %>
+		 <%= f.text_field :username, :class=>"user_username" %>
 		<span class="timestamp">Apenas letras, numeros, ou .-_@</span>
 	  </p>
 	  <p>
 		 <%= f.label :email, "Email" %><br />
-		 <%= f.text_field :email, :class=>"text" %>
+		 <%= f.text_field :email %>
 	  </p>
 	  <p>
 		 <%= f.label :password , "Senha"%><br />
@@ -51,33 +51,33 @@
 	<div class="dados_empresa round">
 	  <p>
 		 <%= f.label :cnpj_cpf, "CNPJ ou CPF" %><br />
-		 <%= f.text_field :cnpj_cpf , :class=>"text"%>
+		 <%= f.text_field :cnpj_cpf %>
 	  </p>
 
 	  <p>
 		 <%= f.label :inscr_estatual, "inscrição Estatual" %><br />
-		 <%= f.text_field :inscr_estatual , :class=>"text"%>
+		 <%= f.text_field :inscr_estatual %>
 	  </p>
 
 
 	  <p>
 		 <%= f.label :razao_social, "Razão Social ou Nome completo" %><br />
-		 <%= f.text_field :razao_social, :class=>"text" %>
+		 <%= f.text_field :razao_social %>
 	  </p>
 
 	  <p>
 		 <%= f.label :fone, "Fone" %><br />
-		 <%= f.text_field :fone , :class=>"text"%>
+		 <%= f.text_field :fone %>
 	  </p>
 
 	  <p>
 		 <%= f.label :fax, "Fax" %><br />
-		 <%= f.text_field :fax , :class=>"text"%>
+		 <%= f.text_field :fax %>
 	  </p>
 
 	  <p>
 		 <%= f.label :contato, "Contato" %><br />
-		 <%= f.text_field :contato , :class=>"text"%>
+		 <%= f.text_field :contato %>
 	  </p>
 	  <p>
 	  &nbsp
@@ -108,32 +108,32 @@
 
 	  <p>
 		 <%= f.label :logradouro, "Logradouro" %><br />
-		 <%= f.text_field :logradouro, :readonly => true, :class=>"text" %>
+		 <%= f.text_field :logradouro, :readonly => true %>
 	  </p>
 
 	  <p>
 		 <%= f.label :numero, "Número" %><br />
-		 <%= f.text_field :numero , :class=>"text"%>
+		 <%= f.text_field :numero%>
 	  </p>
 
 	  <p>
 		 <%= f.label :complemento, "Complemento" %><br />
-		 <%= f.text_field :complemento, :class=>"text" %>
+		 <%= f.text_field :complemento%>
 	  </p>
 
 	  <p>
 		 <%= f.label :bairro, "Bairro" %><br />
-		 <%= f.text_field :bairro, :readonly => true, :class=>"text" %>
+		 <%= f.text_field :bairro, :readonly => true %>
 	  </p>
 
 	  <p>
 		 <%= f.label :cidade, "Cidade" %><br />
-		 <%= f.text_field :cidade, :readonly => true , :class=>"text"%>
+		 <%= f.text_field :cidade, :readonly => true %>
 	  </p>
 
 	  <p>
 		 <%= f.label :uf, "UF" %><br />
-		 <%= f.text_field :uf , :readonly => true, :class=>"text"%>
+		 <%= f.text_field :uf , :readonly => true%>
 	  </p>
 
 	</div>
