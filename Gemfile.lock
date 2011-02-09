@@ -87,7 +87,6 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.8.7)
-    remotipart (0.2.1)
     rspec (2.0.1)
       rspec-core (~> 2.0.1)
       rspec-expectations (~> 2.0.1)
@@ -121,14 +120,12 @@ DEPENDENCIES
   factory_girl_rails (= 1.0)
   faker (= 0.3.1)
   jquery-rails
-  mail
   meta_search
   mocha
   nifty-generators
   paperclip
   pg
   rails (= 3.0.4)
-  remotipart
   rspec (= 2.0.1)
   rspec-rails (= 2.0.1)
   spork (= 0.8.4)
