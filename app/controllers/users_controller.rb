@@ -25,11 +25,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new
+    @user.accessible = :all if logged_in? and current_user.admin?    
+    @user.attributes=params[:user]
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Voce está logado."
-      flash[:success] = "perfil criado com sucesso."
+      flash[:success] = "Perfil criado com sucesso, Voce está logado."
 #		UserMailer.user_create(@user).deliver
 		UserMailer.delay.user_create(@user)
       redirect_to root_path
@@ -46,7 +47,8 @@ class UsersController < ApplicationController
   def update
 #    @user = current_user
     @user = User.find(params[:id])
-    
+    @user.accessible = :all if current_user.admin?
+   	
     if @user.update_attributes(params[:user])
       flash[:success] = "perfil do usuário atualizados."
 #  		UserMailer.user_update(@user).deliver

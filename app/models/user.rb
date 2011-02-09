@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 	attr_accessible :username, :email, :password, :password_confirmation, :cnpj_cpf,	
 							:razao_social,:fone, :fax, :contato, 
 							:cep, :logradouro, :numero, :complemento, :bairro, :cidade, 
-							:uf, :inscr_estatual,:admin
+							:uf, :inscr_estatual
 
 	attr_accessor :password
 
@@ -73,6 +73,7 @@ class User < ActiveRecord::Base
 
 
 private
+
 
   def prepare_password
     unless password.blank?
