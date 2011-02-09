@@ -14,8 +14,8 @@
 					<li><%= link_to "Modalidades", modalidades_path %></li>
 				<% end %>
 
-				<li><%= link_to "Dados do usuário ", edit_user_path  %><li>
-
+				<li><%= link_to "Edita perfil de #{current_user.username}", edit_user_path(current_user), :class=>"user_link" %><li>
+				
 				<li><%= link_to "Log out", logout_path, :method => :delete %></li>
 
 			<% else %>

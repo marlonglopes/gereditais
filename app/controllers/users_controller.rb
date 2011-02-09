@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 	end
 
   def show
-    @user = User.find_by_id(params[:id])
+    @user = User.find(params[:id])
   end
 
 
@@ -39,13 +39,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+#    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def update
-    @user = current_user
+#    @user = current_user
+    @user = User.find(params[:id])
+    
     if @user.update_attributes(params[:user])
-      flash[:success] = "Seu perfil foi atualizado."
+      flash[:success] = "perfil do usuário atualizados."
 #  		UserMailer.user_update(@user).deliver
   		UserMailer.delay.user_update(@user) 
       redirect_to root_path

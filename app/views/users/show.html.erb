@@ -51,6 +51,9 @@
 				%>
 			</h3>
 
+		<% if current_user.admin?%>
+			<%= link_to "Editar dados do Usuario", edit_user_path(@user) %>
+		<% end %>
 
 		</td>
 

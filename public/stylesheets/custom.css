@@ -17,6 +17,13 @@
 /*input.title {font-size:1.5em;}*/
 
 
+.user_link {
+	display: block;
+	font-size: 100%;
+	color: #FF0000;
+	font-style:italic;
+}
+
 
 div.clear {
   border-top:1px solid #ccc;

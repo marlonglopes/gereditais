@@ -30,6 +30,13 @@
 		 <%= f.label :password_confirmation, "Confirma Senha" %><br />
 		 <%= f.password_field :password_confirmation %>
 	  </p>
+
+	<% if logged_in? and current_user.admin? %>
+	  <p>
+		 <%= f.label :admin, "Administrator" %><br />
+		 <%= f.check_box :admin %>
+	  </p>
+	<% end %>
 	</div>
 
  </fieldset> 

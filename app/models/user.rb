@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 	attr_accessible :username, :email, :password, :password_confirmation, :cnpj_cpf,	
 							:razao_social,:fone, :fax, :contato, 
 							:cep, :logradouro, :numero, :complemento, :bairro, :cidade, 
-							:uf, :inscr_estatual
+							:uf, :inscr_estatual,:admin
 
 	attr_accessor :password
 
@@ -37,8 +37,8 @@ class User < ActiveRecord::Base
 	validates_format_of :email, :with =>/^(#{EMAIL})$/ , :allow_blank => true
 	
 	validates_presence_of :password, :on => :create
-	validates_confirmation_of :password
-	validates_length_of :password, :minimum => 4, :allow_blank => false
+	validates_confirmation_of :password, :on=> :create
+	validates_length_of :password, :minimum => 4, :allow_blank => false , :on=>:create
 
   # login can be either username or cnpj_cpf
   def self.authenticate(login, pass)
