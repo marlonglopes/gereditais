@@ -20,15 +20,15 @@
 	  </p>
 	  <p>
 		 <%= f.label :email, "Email" %><br />
-		 <%= f.text_field :email %>
+		 <%= f.text_field :email, :autocomplete=>"off" %>
 	  </p>
 	  <p>
 		 <%= f.label :password , "Senha"%><br />
-		 <%= f.password_field :password %>
+		 <%= f.password_field :password, :autocomplete=>"off" %>
 	  </p>
 	  <p>
 		 <%= f.label :password_confirmation, "Confirma Senha" %><br />
-		 <%= f.password_field :password_confirmation %>
+		 <%= f.password_field :password_confirmation, :autocomplete=>"off" %>
 	  </p>
 
 	<% if logged_in? and current_user.admin? %>
