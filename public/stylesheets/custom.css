@@ -1,4 +1,28 @@
 
+/*.actions{*/
+/*	float: right;*/
+/*}*/
+
+#post-area{
+	width: 90%;
+	height: 100px;
+}
+
+#post-counter {
+	background-color: transparent;
+	color: #999;
+	display: inline-block;
+	width: 45px;
+	border: 0;
+	font: normal 16px 'helvetica neue','lucida grande',helvetica,arial;
+	padding: 0 3px;
+	position: relative;
+	vertical-align: top;
+	top: 6px;
+	text-align: right;
+}
+
+
 /*#password {*/
 /*	margin:0.5em 0;*/
 /*	border-color:#666;*/
