@@ -48,11 +48,12 @@ class MicropostsController < ApplicationController
 
 	 @user=current_user
 	 @edital=Edital.find(params[:micropost][:edital_id])
-    @micropost = @edital.micropost.new(params[:micropost])
+	 @microposts=@edital.micropost.scoped.paginate(:page => params[:page], :per_page=>5)
 
+    @micropost = @edital.micropost.new(params[:micropost])
     respond_to do |format|
       if @micropost.save
-	 		@microposts=@edital.micropost.scoped.paginate(:page => params[:page], :per_page=>5)
+	 	  @microposts=@edital.micropost.scoped.paginate(:page => params[:page], :per_page=>5)
         format.html { redirect_to(@edital) }
 		  format.js
       else

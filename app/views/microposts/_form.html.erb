@@ -6,17 +6,17 @@
 	<%= f.hidden_field :user_id, "value" => current_user.id %>
 
   <div class="field">
-    <%= f.label :post, "Solicitação de esclarecimento:" %><br />
+    <%= f.label :post, "Esclarecimentos e respostas:" %><br />
 
 <div id="mensagem_micropost">
 	( Não serão aceitos impugnações postados no espaço abaixo, impugnações apenas através de upload de arquivos ao lado. )
 </div>
 
 
-    <%= f.text_area :post %>
+    <%= f.text_area :post, :id=>"post-area" %>
   </div>
   <div class="actions">
-    <%= f.submit "Salvar solicitação" %>
+    <%= f.submit "Salvar" , :disabled=>true%><input id="post-counter" value="2000" disabled="disabled">
   </div>
 <% end %>
 

@@ -14,13 +14,36 @@
 //}
 
 /////////////////
-
-
-
 //$('#sub1').click(function() {
 // 	$('#new_download').submit();
 //  	return false;
 //});
+
+
+$('#post-area').keyup(function(event) {
+
+		tot=2000;
+		len = this.value.length;
+		$('#post-counter').attr("value",(tot-len));
+		
+		if (len==0){
+			$("#micropost_submit").attr("disabled",true);
+			return false;
+		}
+
+		if (len>2000){
+			this.value=old;
+			$("#micropost_submit").attr("disabled",true);
+			return false;
+		}
+
+		old=this.value
+		$("#micropost_submit").attr("disabled",false);
+	   return false;
+
+});
+
+
 
 $('#user_cep').blur(function(event) {
 
