@@ -50,7 +50,7 @@ class UsersController < ApplicationController
     @user.accessible = :all if current_user.admin?
    	
     if @user.update_attributes(params[:user])
-      flash[:success] = "perfil do usuário atualizados."
+      flash[:success] = "perfil do usuário atualizado."
 #  		UserMailer.user_update(@user).deliver
   		UserMailer.delay.user_update(@user) 
       redirect_to root_path
