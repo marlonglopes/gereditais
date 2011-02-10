@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   def update
 #    @user = current_user
     @user = User.find(params[:id])
-    @user.accessible = :all if current_user.admin?
+    @user.accessible = :all if logged_in? and current_user.admin?
    	
     if @user.update_attributes(params[:user])
       flash[:success] = "perfil do usuário atualizado."
