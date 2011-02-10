@@ -6,17 +6,17 @@
 	<%= f.hidden_field :user_id, "value" => current_user.id %>
 
   <div class="field">
-    <%= f.label :post, "Novo Comentário:" %><br />
+    <%= f.label :post, "Solicitação de esclarecimento:" %><br />
 
 <div id="mensagem_micropost">
-	( Não serão aceitos impugnçãoes ou esclarecimentos postados no espaço abaixo, somente será eceito através de upload de arquivos ao lado.)
+	( Não serão aceitos impugnações postados no espaço abaixo, impugnações apenas através de upload de arquivos ao lado. )
 </div>
 
 
     <%= f.text_area :post %>
   </div>
   <div class="actions">
-    <%= f.submit "Salvar Comentário" %>
+    <%= f.submit "Salvar solicitação" %>
   </div>
 <% end %>
 

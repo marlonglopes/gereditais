@@ -9,4 +9,6 @@ class Micropost < ActiveRecord::Base
 	
 	validates_presence_of :post, :message => 'Não é possível postar mensagem em branco'
 
+	attr_accessible :edital_id,:user_id,:post
+
 end
