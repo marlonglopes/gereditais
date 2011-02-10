@@ -40,19 +40,20 @@ class DownloadsController < ApplicationController
 #	end
 
 	def create
+
 		session[:save]=false
 		if params[:edital_id] 
 
-			@edital=Edital.find_by_id(params[:edital_id])
+			@edital=Edital.find(params[:edital_id])
 
 			agora = Time.now 
 			abertura = @edital.abertura 
 			
 			if agora < abertura
 
-				@download=@edital.download.new(:user=>current_user)
+				@download=@edital.download.new(:user_id=>current_user.id)
 				
-				if @download.save!
+				if @download.save
 					session[:save]=true
 					respond_to do |format|
 						format.html 
