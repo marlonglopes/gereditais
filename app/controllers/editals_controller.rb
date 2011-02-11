@@ -12,7 +12,7 @@ class EditalsController < ApplicationController
 	def edital
 
 		debugger
-		
+
 		edital = Edital.find(params[:id])
 
 		begin
