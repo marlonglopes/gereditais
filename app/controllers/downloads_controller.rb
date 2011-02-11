@@ -46,15 +46,15 @@ class DownloadsController < ApplicationController
 
 		if params[:edital_id] 
 
-			@edital=Edital.find(params[:edital_id])
+			@edital=Edital.find(params[:download][:edital_id])
 
 			agora = Time.now 
 			abertura = @edital.abertura 
 			
 			if agora < abertura
 
-				@download=@edital.download.new(:user_id=>current_user.id)
-				logger.info("########### #{@download.save}")
+				@download=@edital.download.new(params[:download])
+
 				if @download.save
 					session[:save]=true
 					respond_to do |format|
