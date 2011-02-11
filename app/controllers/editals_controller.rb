@@ -20,11 +20,11 @@ class EditalsController < ApplicationController
 				session[:save]=false
 			else
 				flash[:error] = "Não foi possível fazer download do Edital."
-		  		redirect_to edital
+		  		redirect_to edital.download
 			end
 		rescue
 			flash[:error] = "Não foi possível fazer download do Edital."
-	  		redirect_to edital
+	  		redirect_to edital.download
 		end
 
 	end
