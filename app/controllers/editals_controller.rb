@@ -33,9 +33,9 @@ class EditalsController < ApplicationController
 		begin
 
 			@edital=Edital.find(params[:id])
-			@download=@edital.download.new(params[:download])
+			@download=@edital.download.new(:user_id=>current_user.id)
 
-			if @download.save!
+			if @download.save
 				send_file @edital.edital.path, :type => @edital.edital_content_type
 			else
 				flash[:error] = "Não foi possível fazer download do Edital"
