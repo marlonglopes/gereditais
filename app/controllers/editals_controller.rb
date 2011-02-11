@@ -18,7 +18,7 @@ class EditalsController < ApplicationController
 				send_file edital.edital.path, :type => edital.edital_content_type
 				session[:save]=false
 			else
-				flash[:error] = "erro 1"
+				flash[:error] = "Não foi possível fazer download do edital."
 		  		redirect_to new_edital_download_path(edital)
 			end
 #		rescue
