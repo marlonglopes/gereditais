@@ -17,12 +17,12 @@ class EditalsController < ApplicationController
 				send_file edital.edital.path, :stream => false, :type => edital.edital_content_type
 				session[:save]=false
 			else
-				flash[:error] = "Não foi possível fazer download do Edital."
-#		  		redirect_to root_path
+#				flash[:error] = "Não foi possível fazer download do Edital."
+		  		redirect_to root_path
 			end
 		rescue
-			flash[:error] = "Não foi possível fazer download do Edital."
-#	  		redirect_to root_path
+#			flash[:error] = "Não foi possível fazer download do Edital."
+	  		redirect_to root_path
 		end
 
 	end
