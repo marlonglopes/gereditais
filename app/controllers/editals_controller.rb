@@ -11,11 +11,9 @@ class EditalsController < ApplicationController
 
 	def edital
 
-		debugger
-
 		edital = Edital.find(params[:id])
 
-		begin
+#		begin
 			if session[:save]
 				send_file edital.edital.path, :type => edital.edital_content_type
 				session[:save]=false
@@ -23,10 +21,10 @@ class EditalsController < ApplicationController
 				flash[:error] = "erro 1"
 		  		redirect_to new_edital_download_path(edital)
 			end
-		rescue
-			flash[:error] = "erro 2"
-	  		redirect_to root_path
-		end
+#		rescue
+#			flash[:error] = "erro 2"
+#	  		redirect_to root_path
+#		end
 
 	end
 
