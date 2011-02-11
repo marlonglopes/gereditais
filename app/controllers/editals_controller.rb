@@ -14,7 +14,7 @@ class EditalsController < ApplicationController
 		edital = Edital.find(params[:id])
 
 		begin
-			if session[:save]
+			if session[:save]==true
 				send_file edital.edital.path, :type => edital.edital_content_type
 				session[:save]=false
 			else
