@@ -33,7 +33,7 @@ class EditalsController < ApplicationController
 		begin
 
 			@edital=Edital.find(params[:id])
-			@download=@edital.download.new(:user=>current_user)
+			@download=@edital.download.new(params[:download])
 
 			if @download.save!
 				send_file @edital.edital.path, :type => @edital.edital_content_type
