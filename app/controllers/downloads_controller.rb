@@ -42,7 +42,7 @@ class DownloadsController < ApplicationController
 
 	def create
 
-		session[:save]=true
+		session[:save]=false
 
 		if params[:edital_id] 
 
@@ -54,7 +54,7 @@ class DownloadsController < ApplicationController
 			if agora < abertura
 
 				@download=@edital.download.new(:user_id=>current_user.id)
-
+				logger.info("########### #{@download.save}")
 				if @download.save
 					session[:save]=true
 					respond_to do |format|
