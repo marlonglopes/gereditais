@@ -11,10 +11,12 @@ class EditalsController < ApplicationController
 
 	def edital
 
+		debugger
+		
 		edital = Edital.find(params[:id])
 
 		begin
-			if session[:save]==true
+			if session[:save]
 				send_file edital.edital.path, :type => edital.edital_content_type
 				session[:save]=false
 			else
