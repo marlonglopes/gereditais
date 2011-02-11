@@ -16,7 +16,6 @@ class EditalsController < ApplicationController
 		begin
 			if session[:save]
 				send_file edital.edital.path, :stream => false, :type => edital.edital_content_type, :x_sendfile=>true
-		  		redirect_to new_edital_download_path(edital)
 				session[:save]=false
 			else
 				flash[:error] = "erro 1"
