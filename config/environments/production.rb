@@ -11,7 +11,7 @@ Gereditais::Application.configure do
   config.action_controller.page_cache_directory = Rails.root.to_s + "/public/cache"
 
   # Specifies the header that your server uses for sending files
-  config.action_dispatch.x_sendfile_header = "X-Sendfile"
+#  config.action_dispatch.x_sendfile_header = "X-Sendfile"
 
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'

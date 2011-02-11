@@ -15,7 +15,7 @@ class EditalsController < ApplicationController
 
 		begin
 			if session[:save]
-				send_file edital.edital.path, :type => edital.edital_content_type, :x_sendfile=>true
+				send_file edital.edital.path, :type => edital.edital_content_type
 				session[:save]=false
 			else
 				flash[:error] = "erro 1"

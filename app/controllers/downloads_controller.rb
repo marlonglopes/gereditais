@@ -41,7 +41,7 @@ class DownloadsController < ApplicationController
 
 	def create
 
-		session[:save]=true
+		session[:save]=false
 
 		if params[:edital_id] 
 
