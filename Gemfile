@@ -6,8 +6,6 @@ gem 'rails', '3.0.4'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 #gem 'sqlite3-ruby', '1.2.5',:require => 'sqlite3'
 
-gem 'mongrel'
-
 gem 'pg'
 gem 'paperclip'
 gem 'nifty-generators'
