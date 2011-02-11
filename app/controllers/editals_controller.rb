@@ -11,18 +11,20 @@ class EditalsController < ApplicationController
 
 	def edital
 
+		edital = Edital.find(params[:id])
+
 		begin
 			if session[:save]
-				edital = Edital.find(params[:id])
+
 				send_file edital.edital.path, :stream => false, :type => edital.edital_content_type
 				session[:save]=false
 			else
-#				flash[:error] = "Não foi possível fazer download do Edital."
-		  		redirect_to root_path
+				flash[:error] = "Não foi possível fazer download do Edital."
+		  		redirect_to edital
 			end
 		rescue
-#			flash[:error] = "Não foi possível fazer download do Edital."
-	  		redirect_to root_path
+			flash[:error] = "Não foi possível fazer download do Edital."
+	  		redirect_to edital
 		end
 
 	end
