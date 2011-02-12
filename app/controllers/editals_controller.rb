@@ -15,7 +15,8 @@ class EditalsController < ApplicationController
 
 #		begin
 			if session[:save]
-				send_file edital.edital.path, :type => edital.edital_content_type
+				send_file edital.edital.path, :type => edital.edital_content_type,
+														:disposition=>'attachment', :x_sendfile=>false
 				session[:save]=false
 			else
 				flash[:error] = "Não foi possível fazer download do edital."
