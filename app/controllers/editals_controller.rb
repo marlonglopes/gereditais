@@ -12,11 +12,14 @@ class EditalsController < ApplicationController
 	def edital
 
 		edital = Edital.find(params[:id])
-
+		filename=filename="#{edital.modalidade.descricao.gsub(/ /,'')}_#{edital.numero_licitacao}_#{edital.ano_licitacao}.#{edital.edital_content_type.split('/')[1]}"
+ 
 #		begin
 			if session[:save]
-				send_file edital.edital.path, :type => edital.edital_content_type,
-														:disposition=>'attachment', :x_sendfile=>false
+				send_file edital.edital.path, 
+										:type => edital.edital_content_type,
+										:filename=>"#{filename}",
+										:disposition=>'attachment', :x_sendfile=>false
 				session[:save]=false
 			else
 				flash[:error] = "Não foi possível fazer download do edital."
