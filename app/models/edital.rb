@@ -131,16 +131,13 @@ class Edital < ActiveRecord::Base
 	end
 
 	def hora_abertura=(hora)
-#		data=data_abertura
-##		date=Time.parse("#{data} #{hora}")
-###		date=Time.zone.now
-##		self[:hora_abertura]=hora
-##		self[:data_abertura]=date
-#		data_abertura="#{data} #{hora}"
-		data=self[:data_abertura].to_date
-		self[:data_abertura]=Time.parse("#{data} #{hora}")
-#		logger.info("=================Hora: #{hora}, Data: #{data}=================")
-		return true
+		begin
+			data=self[:data_abertura].to_date
+			self[:data_abertura]=Time.parse("#{data} #{hora}")
+			return true
+		rescue
+			return false
+		end
 	end
 
 
