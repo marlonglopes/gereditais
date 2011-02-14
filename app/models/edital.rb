@@ -12,9 +12,29 @@ class Edital < ActiveRecord::Base
 	scope :nabertos ,  where("data_abertura >= ?", Date.today)
 	scope :publicados , nabertos.where(:publicado => true)
 
-	scope :find_by_licitacao, lambda {|licitacao| {
-						:conditions => {:numero_licitacao => licitacao.split('/').first, 
-     					:ano_licitacao => licitacao.split('/').last}}}
+
+	scope :find_by_licitacao, lambda {|licitacao| 
+			if licitacao.split('/').size==2
+				where(:numero_licitacao => licitacao.split('/').first, 
+						:ano_licitacao => licitacao.split('/').last)
+			else
+				where(:numero_licitacao => licitacao)
+			end
+	}
+
+#	scope :find_by_licitacao, lambda {|licitacao| {
+#						:conditions => {:numero_licitacao => licitacao.split('/').first, 
+#     					:ano_licitacao => licitacao.split('/').last}}}
+
+#	scope :find_by_licitacao, lambda {|licitacao| 
+#				{
+#					:conditions => {
+#							:numero_licitacao => licitacao.split('/').first, 
+#     						:ano_licitacao => licitacao.split('/').last
+#							}
+#				}
+#	}
+
 
  	search_methods :find_by_licitacao
 
