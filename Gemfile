@@ -15,6 +15,10 @@ gem 'meta_search'
 gem 'delayed_job'
 gem "bcrypt-ruby", :require => "bcrypt"
 
+gem 'pox_paginate', "~> 0.2.1"
+##gem 'nokogiri', "~> 1.4.3.1"
+gem 'libxml-ruby', "~> 1.1.4"
+
 group :development do
 	gem 'rspec-rails', '2.0.1'
 	gem 'annotate-models', '1.0.4'
