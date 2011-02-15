@@ -1,0 +1,34 @@
+<div id="search" >
+
+		<%= form_for @search do |f| %>
+
+		<% if logged_in? and current_user.admin? %>
+		  <p>
+			<%= f.label :parecer_id_equals, "Parecer:" %><br />
+			<%= f.select  "parecer_id_equals",  Parecer.order("descricao").scoped.map { |p| [ p.descricao, p.id ]}, {:include_blank => ''}, :class=>"clearme" %>
+		  </p>
+		<% end %>
+
+		  <p>
+			<%= f.label :produto_grupo_id_equals, "Grupo:" %><br />
+			<%= f.select  "produto_grupo_id_equals",  Grupo.order("descricao").scoped.map { |g| [ g.descricao, g.id ]}, {:include_blank => ''}, :class=>"clearme" %>
+		  </p>
+
+		 <p>
+			<%= f.label :produto_descricao_contains, "Descrição:" %><br />
+			<%= f.text_field :produto_descricao_contains, :class=>"clearme", :placeholder=>"Pesquisa descrição do produto" %>
+		 </p>
+
+
+		 <p>
+			<%= f.label :marca_nome_contains, "Marca:" %><br />
+			<%= f.text_field :marca_nome_contains, :class=>"clearme", :placeholder=>"Pesquisa marca do produto" %>
+		 </p>
+
+
+
+		<%= f.submit  "Executar Pesquisa" %> - <%=f.submit  "Limpar Campos", :type=>"reset", :class=>"reset_search", :id=>"reset_search"  %> <br /> 
+
+		<% end %>
+	
+</div>
