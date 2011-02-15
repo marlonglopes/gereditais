@@ -1,0 +1,38 @@
+<h1>Items</h1>
+
+<hr />
+<table>
+  <tr>
+    <th>Código</th>
+    <th>Descrição</th>    
+    <th>Grupo</th>    
+    <th>Marca</th>
+    <th>Parecer</th>    
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.produto.id %></td>
+    <td><%= item.produto.descricao %></td>
+    <td><%= item.produto.grupo.descricao %></td>
+    <td><%= item.marca.nome %></td>
+    <td><%= item.parecer.descricao%></td>
+
+	<% if logged_in? and current_user.admin? %>
+
+    <td><%= link_to 'Show', item %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Destroy', item_path(item), :confirm => 'Are you sure?', :method => :delete %></td>
+
+	<% end%>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
