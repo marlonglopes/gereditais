@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
 #	 @items = Item.all.paginate(:page => params[:page], :per_page=>20)
 
-	 @items = Item.all(:params => {:page => 2, :per_page => 5})
+	 @items = Item.find(:all, :params=>{:page => params[:page] ? params[:page] : 1 , :per_page=>20})
 
 	end
 
