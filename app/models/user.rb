@@ -65,9 +65,10 @@ class User < ActiveRecord::Base
 	str="#{self.username}^#{self.email}^#{self.cnpj_cpf}^#{self.razao_social}^#{self.fone}^#{self.fax}^#{self.contato}^#{self.cep}^#{self.logradouro}^#{self.numero}^#{self.complemento}^#{self.bairro}^#{self.cidade}^#{self.uf}^#{self.inscr_estatual}"
 		
 		logger.info(str)		
-		
-		ret=ControllerConsomewsghc::wsghc(:id=>14,:param=>str)
-		
+		begin
+			ret=ControllerConsomewsghc::wsghc(:id=>14,:param=>str)
+		rescue
+		end
 	end
 
 
