@@ -429,8 +429,8 @@ a.search_editais_button {
 /*	background: -moz-linear-gradient(#EEFF99, #66EE33);*/
 /*	background: linear-gradient(#EEFF99, #66EE33);*/
 
-	-pie-background: linear-gradient(#EEFF99, #66EE33);
-	behavior: url(PIE.htc);
+/*	-pie-background: linear-gradient(#EEFF99, #66EE33);*/
+	behavior: url(/stylesheets/PIE.htc);
 
 }
 
@@ -449,8 +449,6 @@ a.search_editais_button {
 /*background: linear-gradient(#EEFF99, #66EE33);*/
 /*-pie-background: linear-gradient(#EEFF99, #66EE33);*/
 /*behavior: url(/PIE.htc);*/
-
-
 
 
 footer {
