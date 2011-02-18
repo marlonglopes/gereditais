@@ -36,6 +36,52 @@
 //});
 
 
+
+
+if ( $.browser.msie ) {
+
+	$("#search_find_by_licitacao").placeHolder({
+			 "text"           : "Formato NNN/YYYY",
+			 "active"         : "#000",
+			 "placeholder"    : "#333"
+	});
+
+	$("#search_descricao_or_aviso_contains").placeHolder({
+			 "text"           : "Executa pesquisa nos campos descrição e aviso",
+			 "active"         : "#000",
+			 "placeholder"    : "#333"
+	});
+
+	$("#search_data_publicacao_gte").placeHolder({
+			 "text"           : "de",
+			 "active"         : "#000",
+			 "placeholder"    : "#333"
+	});
+
+	$("#search_data_publicacao_lte").placeHolder({
+			 "text"           : "até",
+			 "active"         : "#000",
+			 "placeholder"    : "#333"
+	});
+
+	$("#search_data_abertura_gte").placeHolder({
+			 "text"           : "de",
+			 "active"         : "#000",
+			 "placeholder"    : "#333"
+	});
+
+	$("#search_data_abertura_lte").placeHolder({
+			 "text"           : "até",
+			 "active"         : "#000",
+			 "placeholder"    : "#333"
+	});
+
+
+}
+
+
+
+
 $('#post-area').keyup(function(event) {
 
 		tot=2000;
