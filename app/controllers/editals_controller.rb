@@ -12,7 +12,7 @@ class EditalsController < ApplicationController
 	def edital
 
 		edital = Edital.find(params[:id])
-		filename=filename="#{edital.modalidade.descricao.gsub(/ /,'')}_#{edital.numero_licitacao}_#{edital.ano_licitacao}.#{edital.edital_content_type.split('/')[1]}"
+		filename=filename="ghc_#{edital.modalidade.descricao.gsub(/ /,'')}_#{edital.numero_licitacao}_#{edital.ano_licitacao}.#{edital.edital_content_type.split('/')[1]}"
  
 #		begin
 			if session[:save]
