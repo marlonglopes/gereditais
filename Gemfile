@@ -19,6 +19,7 @@ group :development do
 	gem 'rspec-rails', '2.0.1'
 	gem 'annotate-models', '1.0.4'
 	gem 'faker', '0.3.1'
+	gem 'silent-postgres'
 end 
 
 group :test do
@@ -27,6 +28,7 @@ group :test do
 	gem 'spork', '0.8.4'
 	gem 'factory_girl_rails', '1.0'
 	gem "mocha"
+	gem 'silent-postgres'
 end 
 
 
