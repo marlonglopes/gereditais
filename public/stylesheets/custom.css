@@ -430,9 +430,12 @@ a.search_editais_button {
 /*	background: linear-gradient(#EEFF99, #66EE33);*/
 
 /*	-pie-background: linear-gradient(#EEFF99, #66EE33);*/
+
 	behavior: url(/stylesheets/PIE.htc);
 
 }
+
+
 
 /*border: 1px solid #696;*/
 /*padding: 60px 0;*/
