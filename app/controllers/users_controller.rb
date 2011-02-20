@@ -3,7 +3,6 @@
 class UsersController < ApplicationController
 
   	before_filter :login_required, :except => [:new, :create]
-	before_filter :check_admin
 
 	def index
 
@@ -41,7 +40,10 @@ class UsersController < ApplicationController
 
   def edit
 #    @user = current_user
+	
     @user = User.find(params[:id])
+	 redirect_to root_path if current_user!=@user && current_user.admin==false
+
   end
 
   def update
