@@ -1,17 +1,17 @@
-button.g-button, a.g-button, input[type=submit].g-button, input[type=reset].g-button {
-	padding: 6px 10px;
-	-webkit-border-radius: 2px 2px;
-	border: solid 1px rgb(153, 153, 153);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(221, 221, 221)));
-	color: #333;
-	text-decoration: none;
-	cursor: pointer;
-	display: inline-block;
-	text-align: center;
-	text-shadow: 0px 1px 1px rgba(255,255,255,1);
-	line-height: 1;
-	width: 100px;
-}
+/*button.g-button, a.g-button, input[type=submit].g-button, input[type=reset].g-button {*/
+/*	padding: 6px 10px;*/
+/*	-webkit-border-radius: 2px 2px;*/
+/*	border: solid 1px rgb(153, 153, 153);*/
+/*	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(221, 221, 221)));*/
+/*	color: #333;*/
+/*	text-decoration: none;*/
+/*	cursor: pointer;*/
+/*	display: inline-block;*/
+/*	text-align: center;*/
+/*	text-shadow: 0px 1px 1px rgba(255,255,255,1);*/
+/*	line-height: 1;*/
+/*	width: 100px;*/
+/*}*/
 
 .g-button{
 	padding: 6px 10px;
@@ -26,6 +26,25 @@ button.g-button, a.g-button, input[type=submit].g-button, input[type=reset].g-bu
 	text-shadow: 0px 1px 1px rgba(255,255,255,1);
 	line-height: 1;
 	width: 100px;
+}
+
+.g-button:hover{
+	padding: 6px 10px;
+	-webkit-border-radius: 2px 2px;
+	border: solid 1px rgb(153, 153, 153);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(221, 221, 221)));
+	color: #333;
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	text-shadow: 0px 1px 1px rgba(255,255,255,1);
+	line-height: 1;
+	width: 100px;
+	-webkit-box-shadow: #666 0px 2px 3px;
+	-moz-box-shadow: #666 0px 2px 3px;
+/*	text-decoration: underline;*/
+  border: 1px solid #006; }
 }
 
 /*.actions{*/
