@@ -11,7 +11,7 @@
 	text-shadow: 0px 1px 1px rgba(255,255,255,1);
 	line-height: 1;
 	width: 100px;
-	behavior: url(gereditais/stylesheets/PIE.htc);
+	behavior: url(/gereditais/javascripts/PIE.htc);
 }
 
 .g-button:hover {
@@ -30,7 +30,7 @@
 	-webkit-box-shadow: #666 0px 2px 3px;
 	-moz-box-shadow: #666 0px 2px 3px;
   border: 1px solid #006;
-	behavior: url(gereditais/stylesheets/PIE.htc);
+	behavior: url(/gereditais/javascripts/PIE.htc);
 }
 
 .user_link {
@@ -416,7 +416,7 @@ a.search_editais_button {
 	border-radius:		10px;
 	-webkit-box-shadow: #666 0px 2px 3px;
 	-moz-box-shadow: #666 0px 2px 3px;
-	behavior: url(gereditais/stylesheets/PIE.htc);
+	behavior: url(/gereditais/javascripts/PIE.htc);
 }
 
 footer {
