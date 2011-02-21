@@ -33,7 +33,7 @@
 	text-shadow: 0px 1px 1px rgba(255,255,255,1);
 	line-height: 1;
 	width: 100px;
-	behavior: url(/gereditais/stylesheets/PIE.htc);
+	behavior: url(PIE.htc);
 }
 
 .g-button:hover{
@@ -52,9 +52,8 @@
 	-webkit-box-shadow: #666 0px 2px 3px;
 	-moz-box-shadow: #666 0px 2px 3px;
   border: 1px solid #006;
-	behavior: url(/gereditais/stylesheets/PIE.htc);
+	behavior: url(PIE.htc);
 }
-
 
 .user_link {
 	display: block;
@@ -439,15 +438,7 @@ a.search_editais_button {
 	border-radius:		10px;
 	-webkit-box-shadow: #666 0px 2px 3px;
 	-moz-box-shadow: #666 0px 2px 3px;
-
-/*	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#EEFF99), to(#66EE33));*/
-/*	background: -moz-linear-gradient(#EEFF99, #66EE33);*/
-/*	background: linear-gradient(#EEFF99, #66EE33);*/
-
-/*	-pie-background: linear-gradient(#EEFF99, #66EE33);*/
-
-	behavior: url(/stylesheets/PIE.htc);
-
+	behavior: url(PIE.htc);
 }
 
 /*border: 1px solid #696;*/
