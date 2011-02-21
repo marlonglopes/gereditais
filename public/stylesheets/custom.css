@@ -11,10 +11,10 @@
 	text-shadow: 0px 1px 1px rgba(255,255,255,1);
 	line-height: 1;
 	width: 100px;
-	behavior: url(gereditais/PIE.htc);
+	behavior: url(gereditais/stylesheets/PIE.htc);
 }
 
-.g-button:hover{
+.g-button:hover {
 	padding: 6px 10px;
 	-webkit-border-radius: 2px 2px;
 	border: solid 1px rgb(153, 153, 153);
@@ -30,7 +30,7 @@
 	-webkit-box-shadow: #666 0px 2px 3px;
 	-moz-box-shadow: #666 0px 2px 3px;
   border: 1px solid #006;
-	behavior: url(gereditais/PIE.htc);
+	behavior: url(gereditais/stylesheets/PIE.htc);
 }
 
 .user_link {
@@ -431,7 +431,6 @@ footer nav {
 	float: none;
 }
 
-
 /* User singup page*/
 
 .dados_usuario {
@@ -463,7 +462,6 @@ footer nav {
 	vertical-align: top;
 	background: #ffd;
 }
-
 
 /* User show page */
 
@@ -524,7 +522,6 @@ td.main {
 	vertical-align: top;
 	background: #ffa;
 }
-
 
 td.sidebar {
 	width: 100%;
@@ -678,12 +675,6 @@ form.new_micropost {
 	margin-bottom: 2em;
 }
 
-/*form.new_micropost textarea {*/
-/*	height: 4em;*/
-/*	margin-bottom: 0;*/
-/*}*/
-
-
 div.uploads {
 	width: 100%;
 	padding: 1em;
@@ -709,4 +700,3 @@ div.uploads {
 	top: 6px;
 	text-align: right;
 }
-
