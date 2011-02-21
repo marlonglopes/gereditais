@@ -19,7 +19,7 @@
 				<%= render :partial => @edital.impugnation.where(:user_id=>current_user) %>
 			</div>
 
-			<div id="impugnation_form" class="round">
+			<div id="impugnation_form">
 				<%= link_to image_tag("icons/add.png",:alt=>"Nova Impugnação"), new_edital_impugnation_path(@edital), :remote=>true unless current_user.admin?%>Nova Impugnação
 			</div>
 

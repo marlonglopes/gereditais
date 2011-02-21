@@ -30,9 +30,9 @@
 	<% end %>	
 
 	<% if current_user.admin? %>
-		<%=  link_to  "Propostas", @edital %>
+		<%=  link_to  "Propostas", @edital,:class=>"g-button" %>
 	<% else %>
-		<%=  link_to  "Upload de Proposta", @edital %>
+		<%=  link_to  "Upload de Proposta", @edital,:class=>"g-button" %>
 	<% end %>
 	
 <div>

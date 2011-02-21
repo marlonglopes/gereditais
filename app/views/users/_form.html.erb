@@ -12,7 +12,7 @@
  <fieldset class="round"> 
  <legend>Dados para login</legend> 
 
-	<div class="dados_usuario round">
+	<div class="dados_usuario">
 	  <p>
 		 <%= f.label :username, "Usuario" %><br />
 		 <%= f.text_field :username, :class=>"user_username" %>
@@ -55,7 +55,7 @@
 <fieldset class="round"> 
  <legend>Dados da Empresa</legend> 
 
-	<div class="dados_empresa round">
+	<div class="dados_empresa">
 	  <p>
 		 <%= f.label :cnpj_cpf, "CNPJ ou CPF" %><br />
 		 <%= f.text_field :cnpj_cpf %>
@@ -104,7 +104,7 @@
 <fieldset class="round"> 
  <legend>Endereço da Empresa</legend> 
 
-	<div class="endereco_empresa round" id="endereco_empresa" data-root="<%=root_url%>" >
+	<div class="endereco_empresa " id="endereco_empresa" data-root="<%=root_url%>" >
 	  <p>
 		 <%= f.label :cep, "CEP" %><br />
 		 <%= f.text_field :cep , :class=>"text"%>
@@ -153,7 +153,7 @@
 </table>
 
 
-<p><%= f.submit @user.new_record? ? "Salvar Cadastro" : "Atualizar Cadastro" %></p>
+<p><%= f.submit @user.new_record? ? "Salvar" : "Atualizar", :class=>"g-button" %></p>
 
  
 <% end %>

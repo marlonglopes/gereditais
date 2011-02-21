@@ -19,7 +19,7 @@
 
 			<% if @count_uploads==0 %>
 
-			<div id="upload_form" class="round">
+			<div id="upload_form">
 				<%= link_to image_tag("icons/add.png",:alt=>"Nova Proposta"), new_edital_upload_path(@edital), :remote=>true unless current_user.admin?%>Nova Proposta
 			</div>
 

@@ -20,16 +20,15 @@
 							<div id="stats" class="round">					
 								<%= render 'shared/stats' %>
 							</div>
-
+							<br />
 							<% flash.each do |name, msg| %>
-							  <%= content_tag :div, msg, :class => "#{name}" %>
+							  <%= content_tag :div, msg, :class => "#{name} round" %>
 							<% end %>
-
 			
 							<div id="uploads" class="round">	 
 								<%=render 'uploads/uploads'%>
 							</div>
-
+							<br />
 							<div id="impugnations" class="round">	 
 								<%=render 'impugnations/impugnations'%>
 							</div>

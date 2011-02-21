@@ -11,7 +11,7 @@
  <fieldset class="round"> 
  <legend>Autenticação</legend> 
 
-<div class="login_usuario round">
+<div class="login_usuario">
 
 	<%= form_tag sessions_path do %>
 	  <p>
@@ -23,13 +23,14 @@
 		 <%= password_field_tag :password%>
 	  </p>
 </div>
-
  </fieldset> 
+
+<p><%= submit_tag "Login", :class=>"g-button" %></p>
 
 </td>
 </tr>
 </table>
 
-	  <p><%= submit_tag "Login" %></p>
+	  
 	<% end %>
 

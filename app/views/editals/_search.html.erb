@@ -2,6 +2,9 @@
 
 		<%= form_for @search do |f| %>
 
+<fieldset class="round"> 
+ <legend>Pesquisa</legend> 
+
 		  <p>
 			<%= f.label :modalidade_id_equals, "Modalidade:" %><br />
 			<%= f.select  "modalidade_id_equals",  @modalidades.map { |m| [ m.descricao, m.codigo ]}, {:include_blank => ''}, :class=>"clearme" %>
@@ -40,9 +43,9 @@
 			  </p>
 
 			<% end %>
-
-		<%= f.submit  "Executar Pesquisa" %> - <%=f.submit  "Limpar Campos", :type=>"reset", :class=>"reset_search", :id=>"reset_search"  %> <br /> 
+ 
+		<%= f.submit  "Pesquisar", :class=>"g-button" %>  <%=f.submit  "Limpar", :type=>"reset", :class=>"reset_search g-button", :id=>"reset_search"  %> <br /> 
 
 		<% end %>
-	
+</fieldset> 	
 </div>
