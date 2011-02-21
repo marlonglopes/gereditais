@@ -7,3 +7,4 @@ public/system/**/*
 public/cache/*
 public/cache/**/*
 
+.bundle\n
