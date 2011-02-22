@@ -68,5 +68,6 @@ impugnation_edital_impugnation GET    /editals/:edital_id/impugnations/:id/impug
                         signup        /signup(.:format)                                          {:action=>"new", :controller=>"users"}
                         logout        /logout(.:format)                                          {:action=>"destroy", :controller=>"sessions"}
                          login        /login(.:format)                                           {:action=>"new", :controller=>"sessions"}
-                          root        /(.:format)                                                {:controller=>"editals", :action=>"index"}
+                      products        /products(.:format)                                        {:action=>"products", :to=>#<Proc:0x00007fe59a555eb0@/home/administrator/.rvm/gems/ruby-1.8.7-p302@gereditais/gems/actionpack-3.0.4/lib/action_dispatch/routing/mapper.rb:362>}
+                          root        /(.:format)                                                {:action=>"index", :controller=>"editals"}
                                       /:controller(/:action(/:id(.:format)))                     
