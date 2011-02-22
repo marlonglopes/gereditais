@@ -24,8 +24,10 @@ class User < ActiveRecord::Base
 	validates_presence_of :username
 	validates_uniqueness_of :username, :cnpj_cpf , :allow_blank => false
 
-	CPF  = /\d{3}\.\d{3}\.\d{3}\-\d{2}/
-	CNPJ = /\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}/
+#	CPF  = /\d{3}\.\d{3}\.\d{3}\-\d{2}/
+#	CNPJ = /\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}/
+	CPF  = /\d{11}/
+	CNPJ = /\d{14}/
 
 	validates_format_of :cnpj_cpf, :with =>/^(#{CPF})|(#{CNPJ})$/, :allow_blank => false, :message => "CPF ou CNPJ formato inválido", :uniqueness =>{:case_sensitive => false}
 
